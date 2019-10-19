@@ -4,9 +4,7 @@ import Landing from '../Landing/Landing'
 import './App.css'
 
 class App extends Component {
-  state = {
-    error: null
-  }
+  state = { hasError: false }
   render() {
     return (
       <div className='App'>
