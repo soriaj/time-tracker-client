@@ -9,7 +9,7 @@
    padding: 55px;
 }
 
-.register-btn {
+.welcome-btn {
    background-color: #4CAF50;
    color: white;
    padding: 16px 20px;
@@ -21,7 +21,7 @@
    text-transform: uppercase;
 }
 
-.register-btn:hover {
+.welcome-btn:hover {
    background-color: rgb(38, 172, 43);
    box-shadow: 1 1 rgb(44, 44, 44);
 }

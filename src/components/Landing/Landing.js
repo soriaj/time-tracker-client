@@ -10,7 +10,7 @@ class Landing extends Component {
             <h1>Welcome to Time Tracker</h1>
             <p>An application for those that want to keep track of their customer acitivies organized and readily availabe for review</p>
             <div>
-               <button className="register-btn">
+               <button className="welcome-btn">
                   <Link to='/register' className="sign-up-link">
                      Sign Up
                   </Link>

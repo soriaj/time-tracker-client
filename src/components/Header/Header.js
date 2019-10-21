@@ -47,8 +47,10 @@ class Header extends Component {
    render() {
       return <>
          <nav role='navigation' className="navbar">
-            <span className="navbar-toggle" id="js-navbar-toggle"
-            onClick={this.navBarToggle}>
+            <span className="navbar-toggle" 
+               id="js-navbar-toggle"
+               onClick={this.navBarToggle}
+            >
                <FontAwesomeIcon icon={faBars} className="fas fa-bars"></FontAwesomeIcon>
             </span>
             <Link to="/" className="logo">
