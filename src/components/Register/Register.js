@@ -43,13 +43,13 @@ class Register extends Component {
       e.preventDefault()
       const { full_name, email, user_name, password, password_repeat } = e.target
 
-      const data = {
+      const registerData = {
          full_name: full_name.value,
          email: email.value,
          user_name: user_name.value,
          password: password.value,
       }
-      console.log(data)
+      // console.log(dregisterData)
       full_name.value = ''
       email.value = ''
       user_name.value = ''
