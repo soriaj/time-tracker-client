@@ -6,6 +6,10 @@ import { faUserClock, faBars } from '@fortawesome/free-solid-svg-icons'
 import './Header.css'
 
 class Header extends Component {
+   state = {
+      active: false
+   }
+
    handleLogoutClick() {
       alert('Logout Clicked')
    }

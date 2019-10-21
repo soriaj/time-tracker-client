@@ -6,7 +6,7 @@ import SignIn from '../SignIn/SignIn';
 class Landing extends Component {
    render() {
       return (
-         <div class="welcome">
+         <div className="welcome">
             <h1>Welcome to Time Tracker</h1>
             <p>An application for those that want to keep track of their customer acitivies organized and readily availabe for review</p>
             <div>
