@@ -1,0 +1,147 @@
+.activities-list {
+   justify-content: center;
+   padding: 55px;
+}
+
+.add-activity {
+   display: flex;
+   justify-content: center;
+}
+
+.add-btn {
+   background-color: #4CAF50;
+   color: white;
+   padding: 10px 10px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+   opacity: 0.9;
+   text-transform: uppercase;
+}
+ 
+.add-btn:hover {
+   opacity: 1;
+}
+
+.filterable-list{
+   justify-content: center;
+   margin-left: auto;
+   margin-right: auto;
+   padding-bottom: 35px;
+   width: 90%;
+}
+
+/* LIST ITEMS */
+.ListItem {
+   box-shadow: 0 0 1px 0 rgba(0,0,0,0.3);
+   display: flex;
+   justify-content: space-between;
+   padding: 5px;
+   margin-bottom: 5px;
+}
+.ListItem__icon {
+   /* flex: 1; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.ListItem__circle {
+   border-radius: 50%;
+   /* border: 1px solid rgba(0,0,0,0.1); */
+   width: 50px;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: rgba(0,0,0,0.3);
+} 
+.ListItem__content {
+   flex: 5;
+   padding: 2px;
+} 
+.ListItem__heading {
+   display: flex;
+} 
+.ListItem__title {
+   flex: 4;
+   font-size: 1em;
+   font-weight: bold;
+   text-align: left;
+} 
+.ListItem__size {
+   flex: 1;
+   font-size: 0.9em;
+   color: rgba(0,0,0,0.4);
+   text-align: right;
+} 
+.ListItem__actions {
+   display: flex;
+   justify-content: space-between;
+}
+.ListItem__status {
+   flex: 1;
+   font-size: 0.9em;
+   /* color: rgb(46, 184, 230); */
+   text-align: left;
+}
+
+/* CONTROL BAR */
+.ControlBar {
+   display: flex;
+   flex-direction: row;
+   /* border: solid 1px rgba(0,0,0,0.1); */
+   width: 90px;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 3px;
+   margin: 2px;
+   color: #7D7D7D;
+}
+.ControlBar__btn {
+   flex: 1;
+   padding: 2px;
+}
+.ControlBar__btn:hover, .ControlBar__btn:focus {
+   color: #212529;
+   text-decoration: none;
+}
+.ControlBar__btn:focus, .ControlBar__btn.focus {
+   outline: 0;
+   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.ControlBar__btn.disabled, .ControlBar__btn:disabled {
+   opacity: 0.65;
+}
+.ControlBar__btn:not(:disabled):not(.disabled) {
+   cursor: pointer;
+}
+
+/* @media screen and (min-width: 1000px){
+   .add-btn {
+      width: 65%;
+   }
+} */
+
+@media screen and (min-width: 768px){
+   .activies-list, .filterable-list {
+      width: 75%;
+   }
+   .search-bar {
+      flex-direction: row;
+   }
+
+   .search-box {
+      width: 60%;
+   }
+   
+   .add-btn {
+      width: 70%;
+   }
+}
+
+@media screen and (min-width: 640px) {
+   .add-btn {
+      width: 35%;
+   }
+}

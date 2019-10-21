@@ -5,6 +5,7 @@ import Landing from '../Landing/Landing'
 import Register from '../Register/Register'
 import Login from '../Login/Login'
 import NotFound from '../NotFound/NotFound'
+import Activity from '../Activity/Activity'
 import './App.css'
 
 class App extends Component {
@@ -20,6 +21,8 @@ class App extends Component {
             <Route exact path='/' component={Landing} />
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
+            {/* Activities Will Be Protected Route */}
+            <Route path='/activity' component={Activity} />
             <Route component={NotFound} />
           </Switch>
         </main>
