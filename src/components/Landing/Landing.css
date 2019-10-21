@@ -1,0 +1,32 @@
+.main {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.welcome {
+   justify-content: center;
+   padding: 55px;
+}
+
+.register-btn {
+   background-color: #4CAF50;
+   color: white;
+   padding: 16px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 150px;
+   opacity: 0.9;
+   text-transform: uppercase;
+}
+
+.register-btn:hover {
+   background-color: rgb(38, 172, 43);
+   box-shadow: 1 1 rgb(44, 44, 44);
+}
+
+.sign-up-link {
+   text-decoration: none;
+   color: white;
+}
