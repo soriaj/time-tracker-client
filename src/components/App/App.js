@@ -4,6 +4,7 @@ import Header from '../Header/Header'
 import Landing from '../Landing/Landing'
 import Register from '../Register/Register'
 import Login from '../Login/Login'
+import NotFound from '../NotFound/NotFound'
 import './App.css'
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
             <Route exact path='/' component={Landing} />
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
+            <Route component={NotFound} />
           </Switch>
         </main>
       </div>

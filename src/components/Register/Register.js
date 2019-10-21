@@ -7,10 +7,6 @@ class Register extends Component {
       super(props)
       this.state = { 
          error: null,
-         // full_name: '',
-         // email: '',
-         // user_name: '',
-         // password: '',
       }
    }
 
@@ -55,6 +51,7 @@ class Register extends Component {
       user_name.value = ''
       password.value = ''
       password_repeat.value = ''
+      this.props.history.push('/login')
    }
    render() {
       const { error } = this.state
