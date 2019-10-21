@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartLine, faTrashAlt, faUserEdit } from '@fortawesome/free-solid-svg-icons'
-import './Activity.css'
+// import AddActivity from '../AddActivity/AddActivity'
+import './ActivityListItem.css'
 
 class Activity extends Component {
    handleActivitySubmit() {
