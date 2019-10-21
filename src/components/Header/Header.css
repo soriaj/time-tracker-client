@@ -39,6 +39,10 @@
    font-size: 24px;
 }
 
+.active {
+   display: block;
+}
+
 /*  END MY WIREFRAME COPY  */
 @media screen and (min-width: 1000px) {
    .navbar {
@@ -54,7 +58,6 @@
       padding-bottom: 0;
       height: 70px;
       align-items: center;
-      border: 1px solid red;
       padding-right: 40px;
       padding-left: 40px;
    }

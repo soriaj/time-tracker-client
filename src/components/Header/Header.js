@@ -10,6 +10,11 @@ class Header extends Component {
       alert('Logout Clicked')
    }
 
+   navBarToggle() {
+      let mainNav = document.getElementById('js-menu');
+      mainNav.classList.toggle('active');
+   }
+
    renderLogoutLink() {
       return (
          <ul className="main-nav" id="js-menu">
@@ -42,7 +47,8 @@ class Header extends Component {
    render() {
       return <>
          <nav role='navigation' className="navbar">
-            <span className="navbar-toggle" id="js-navbar-toggle">
+            <span className="navbar-toggle" id="js-navbar-toggle"
+            onClick={this.navBarToggle}>
                <FontAwesomeIcon icon={faBars} className="fas fa-bars"></FontAwesomeIcon>
             </span>
             <Link to="/" className="logo">
