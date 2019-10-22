@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartLine, faTrashAlt, faUserEdit } from '@fortawesome/free-solid-svg-icons'
-// import AddActivity from '../AddActivity/AddActivity'
+import { format, compareAsc } from 'date-fns'
 import './ActivityListItem.css'
 
 class Activity extends Component {
-   handleActivitySubmit() {
+   handleActivitySubmit = () => {
       // Should redirect to Add Activity form
-      alert('Add an Activity')
+      this.props.history.push('/add-activity')
    }
    render() {
       return (
          <>
-            <div class="activities-list">
+            <div className="activities-list">
                <form>
-                  <div class="registration-form">
+                  <div className="registration-form">
                      <h1>Activities</h1>
                      <hr />
                      <label htmlFor="search"><b>Search Your Activities</b></label>
-                     <input type="text" placeholder="Search ..." name="search" class="textarea" />
+                     <input type="text" placeholder="Search ..." name="search" className="textarea" />
                   
-                     <button type="button" onClick={this.handleActivitySubmit} class="add-btn">Add Activity</button>
+                     <button type="button" onClick={this.handleActivitySubmit} className="add-btn">Add Activity</button>
                   </div>
                </form>
             </div>

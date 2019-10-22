@@ -6,7 +6,9 @@ import Register from '../Register/Register'
 import Login from '../Login/Login'
 import NotFound from '../NotFound/NotFound'
 import ActivityListItem from '../Activity/ActivityListItem'
+import AddActivity from '../AddActivity/AddActivity';
 import './App.css'
+
 
 class App extends Component {
   state = { hasError: false }
@@ -23,6 +25,7 @@ class App extends Component {
             <Route path='/login' component={Login} />
             {/* Activities Will Be Protected Route */}
             <Route path='/activity' component={ActivityListItem} />
+            <Route path='/add-activity' component={AddActivity} />
             <Route component={NotFound} />
           </Switch>
         </main>
