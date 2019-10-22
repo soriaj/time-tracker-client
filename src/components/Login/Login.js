@@ -5,12 +5,13 @@ class Login extends Component {
    handleOnSubmit = ev => {
       ev.preventDefault()
       const { user_name, password } = ev.target
-      const credentials = {
-         user_name: user_name.value,
-         password: password.value,
-      }
+      // const credentials = {
+      //    user_name: user_name.value,
+      //    password: password.value,
+      // }
       user_name.value = ''
       password.value = ''
+      this.props.history.push('/activity')
    }
 
    render() {

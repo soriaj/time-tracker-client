@@ -1,4 +1,11 @@
 .login {
    justify-content: center;
-   padding: 55px;
+   padding: 15px;
+}
+
+@media screen and (min-width: 768px){
+   .login {
+      padding-left: 45px;
+      padding-right: 45px;
+   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { format, compareAsc } from 'date-fns'
+import { format } from 'date-fns'
 import './AddActivity.css'
 
 class AddActivity extends Component {

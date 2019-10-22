@@ -10,8 +10,8 @@ class Header extends Component {
       active: false
    }
 
-   handleLogoutClick() {
-      alert('Logout Clicked')
+   handleLogoutClick =() => {
+      this.props.history.push('/login')
    }
 
    navBarToggle() {
@@ -49,6 +49,7 @@ class Header extends Component {
    }
 
    render() {
+      console.log(this.props)
       return <>
          <nav role='navigation' className="navbar">
             <span className="navbar-toggle" 
@@ -62,7 +63,7 @@ class Header extends Component {
                </FontAwesomeIcon>
                Time Tracker
             </Link>
-            {false
+            {true
                ? this.renderLogoutLink()
                : this.renderLoginLink()
             }

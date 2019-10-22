@@ -1,0 +1,52 @@
+{
+   "activities": [
+      {
+         "id": 1,
+         "activity_title": "Activty 1",
+         "company_name": "eCorp",
+         "customer_name": "Mr. Robot",
+         "description": "Met with Mr. Robot to discuss eCorp activity. Looking for futher expansion into other technologies.",
+         "activity_date": "09/12/19"
+      },
+      {
+         "id": 2,
+         "activity_title": "Activty 2",
+         "company_name": "Awesome Deals",
+         "customer_name": "Jane Doe",
+         "description": "Met with Jane and had good conversation about buying more of services.",
+         "activity_date": "08/29/19"
+      },
+      {
+         "id": "3",
+         "activity_title": "Activty 3",
+         "company_name": "Energy Inc.",
+         "customer_name": "John Energy",
+         "description": "VP discussion on modernizing current infrastructure to future proof environment.",
+         "activity_date": "10/02/19"
+      },
+      {
+         "id": 4,
+         "activity_title": "Activty 4",
+         "company_name": "eCorp",
+         "customer_name": "Mr. Robot",
+         "description": "Second meeting with Mr. Robot. Mr. Robot is looking to elimanate the competition through aggressive expansion. He is looking for additional service to help with that.",
+         "activity_date": "09/21/19"
+      },
+      {
+         "id": 5,
+         "activity_title": "Activty 5",
+         "company_name": "eCorp",
+         "customer_name": "Victor",
+         "description": "Strategic meeting with Victor on current plans and future roadmap.",
+         "activity_date": "07/11/19"
+      },
+      {
+         "id": 6,
+         "activity_title": "Activty 6",
+         "company_name": "Awesome Deals",
+         "customer_name": "Jane Doe",
+         "description": "Met with Jane again to go over services proposal and moderization of current technologies.",
+         "activity_date": "10/01/19"
+      }
+   ]  
+}

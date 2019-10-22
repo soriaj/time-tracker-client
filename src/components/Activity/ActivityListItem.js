@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartLine, faTrashAlt, faUserEdit } from '@fortawesome/free-solid-svg-icons'
-import { format, compareAsc } from 'date-fns'
+import { format } from 'date-fns'
 import './ActivityListItem.css'
 
 class Activity extends Component {
@@ -35,7 +35,7 @@ class Activity extends Component {
                   <div className="ListItem__content">
                      <div className="ListItem__heading">
                         <div className="ListItem__title">Activity One Summary</div>
-                        <div className="ListItem__size">Date Created</div>
+                        <div className="ListItem__size">{`Created: ${format(new Date(), 'MM/dd/yyyy')}`}</div>
                      </div>
                      <div className="ListItem__actions">
                         <div className="ListItem__status">

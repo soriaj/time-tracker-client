@@ -1,6 +1,6 @@
 .registration {
    justify-content: center;
-   padding: 55px;
+   padding: 15px;
 }
 
 /*  REGISTRATION FORM CSS */
@@ -54,4 +54,11 @@ hr {
  
 a {
    color: dodgerblue;
+}
+
+@media screen and (min-width: 768px){
+   .registration {
+      padding-left: 45px;
+      padding-right: 45px;
+   }
 }

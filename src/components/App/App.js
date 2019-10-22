@@ -12,11 +12,15 @@ import './App.css'
 
 class App extends Component {
   state = { hasError: false }
-  
+
+
   render() {
+    console.log(this.props)
     return (
       <div className='App'>
-        <Header />
+        <header>
+          <Header />
+        </header>
         <main className='App__main'>
           {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
           <Switch>
