@@ -8,7 +8,23 @@ class AddActivity extends Component {
 
    handleSubmitAddActivity = ev => {
       ev.preventDefault()
-      alert('You added a activity')
+      const { summary, company, customer, description  } = ev.target
+      const { activities, addActivity } = this.context
+      const activity = {
+         id: activities.length + 1,
+         summary: summary.value,
+         company: company.value,
+         customer: customer.value,
+         description: description.value,
+         date: format(new Date(), 'MM/dd/yyyy')
+      }
+      
+      addActivity(activity)
+      summary.value = ''
+      company.value = ''
+      customer.value = ''
+      description.value = ''
+      this.props.history.push('/activity')
    }
 
    handleCancel = () => {
@@ -16,24 +32,29 @@ class AddActivity extends Component {
    }
 
    render() {
-      console.log(this.context)
       return (
          <div className="registration">
             <form onSubmit={this.handleSubmitAddActivity} >
                <div className="registration-form">
                   <h2>{`Date Modified: ${format(new Date(), 'MM/dd/yyyy')}`} </h2>
                   <hr />
-                  <label htmlFor="title"><b>Activity Title</b></label>
-                  <input type="text" placeholder="Enter Activity Title" name="title" className="textarea" required />
+                  <label htmlFor="summary"><b>Activity Summary</b></label>
+                  <input 
+                     type="text" 
+                     placeholder="Enter Brief Summary" 
+                     name="summary" 
+                     className="textarea" 
+                     required 
+                  />
 
                   <label htmlFor="company"><b>Company Name</b></label>
                   <input type="text" placeholder="Enter company Name" name="company" className="textarea" required />
                   
-                  <label htmlFor="contact"><b>Customer Name</b></label>
-                  <input type="text" placeholder="Full Name" name="contact" className="textarea" required />
+                  <label htmlFor="customer"><b>Customer Name</b></label>
+                  <input type="text" placeholder="Full Name" name="customer" className="textarea" required />
                   
                   <label htmlFor="description"><b>Description</b></label>
-                  <textarea className="textarea" placeholder="Activity description..."></textarea>
+                  <textarea className="textarea" name="description" placeholder="Activity description..."></textarea>
                   <hr />
 
                   <button type="submit" className="register-btn">Save</button>

@@ -28,7 +28,7 @@ class App extends Component {
 
   addActivity = activity => {
     this.setState({
-       activities: [this.state.activities, ...activity]
+       activities: [...this.state.activities, activity]
     })
   }
 

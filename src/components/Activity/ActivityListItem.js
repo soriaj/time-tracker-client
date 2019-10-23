@@ -6,16 +6,11 @@ import ActivityContext from '../../ActivityContext'
 // import { activities } from '../../../src/activities-data'
 
 class Activity extends Component {
+   static contextType = ActivityContext
+   
    state = {
       activities: [],
       searchTerm: '',
-   }
-   static contextType = ActivityContext
-
-   componentDidMount(){
-      this.setState({
-         activities: this.context.activities
-      })
    }
 
    updateSearchTerm = term => {
@@ -25,17 +20,14 @@ class Activity extends Component {
    }
 
    render() {
-      // const { activities, searchTerm } = this.state
       const { searchTerm } = this.state
       const { activities } = this.context
-      console.log(this.context)
       return (
          <>
             <div className="activities-list">
                <SearchBox 
                   searchTerm={searchTerm}
                   handleUpdate={term => this.updateSearchTerm(term)}
-                  // addActivity={this.addActivity}
                />
             </div>
 
