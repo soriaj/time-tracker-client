@@ -20,14 +20,6 @@
 }
 
 @media screen and (min-width: 768px) {
-   .navbar {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 0;
-      height: 70px;
-      align-items: center;
-   }
-
    .main {
       margin-right: auto;
       margin-left: auto;

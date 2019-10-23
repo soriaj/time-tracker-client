@@ -6,6 +6,7 @@
    position: fixed;
    width: 100%;
    top: 0;
+   z-index: 5;
 }
 
 .main-nav {
@@ -46,19 +47,12 @@
 }
 
 /*  END MY WIREFRAME COPY  */
-@media screen and (min-width: 1000px) {
-   .navbar {
-      padding-left: 80px;
-      padding-right: 80px;
-   }
-}
 
 @media screen and (min-width: 768px) {
    .navbar {
       display: flex;
       justify-content: space-between;
       padding-bottom: 0;
-      height: 70px;
       align-items: center;
       padding-right: 40px;
       padding-left: 40px;

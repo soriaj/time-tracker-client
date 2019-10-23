@@ -7,14 +7,18 @@ import './Header.css'
 
 class Header extends Component {
    state = {
-      active: false
+      active: false,
+      collapsed: true,
    }
 
    handleLogoutClick =() => {
       this.props.history.push('/login')
    }
 
-   navBarToggle() {
+   navBarToggle = () => {
+      this.setState({
+         collapsed: !this.state.collapsed
+      })
       let mainNav = document.getElementById('js-menu');
       mainNav.classList.toggle('active');
    }
@@ -49,26 +53,32 @@ class Header extends Component {
    }
 
    render() {
-      return <>
+      const collapsed = this.state.collapsed
+      // console.log(collapsed)
+      return (
+         <>
          <nav role='navigation' className="navbar">
-            <span className="navbar-toggle" 
+            <div className="navbar-toggle"
+               data-toggle="collapse" 
                id="js-navbar-toggle"
-               onClick={this.navBarToggle}
+               // onClick={this.navBarToggle}
             >
-               <FontAwesomeIcon icon={faBars} className="fas fa-bars"></FontAwesomeIcon>
-            </span>
-            <NavLink to="/" className="logo">
+               <FontAwesomeIcon icon={faBars} onClick={this.navBarToggle} className="fas fa-bars"></FontAwesomeIcon>
+            </div>
+            {/* <NavLink to="/" className="logo"> */}
+            <div className="logo">
                <FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
                </FontAwesomeIcon>
                Time Tracker
-            </NavLink>
-            {false
+            </div>
+            {/* </NavLink> */}
+            {true
                ? this.renderLogoutLink()
                : this.renderLoginLink()
             }
          </nav>
       </>
-
+      )
    }
 }
 

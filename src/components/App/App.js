@@ -17,6 +17,7 @@ class App extends Component {
   state = {
     hasError: false,
     activities: [],
+    collapsed: false,
   }
 
   static contextType = ActivityContext
@@ -59,6 +60,14 @@ class App extends Component {
     })
   }
 
+  // navBarToggle = () => {
+  //   this.setState({
+  //      collapsed: !this.state.collapsed
+  //   })
+  //   let mainNav = document.getElementById('js-menu');
+  //   mainNav.classList.toggle('active');
+  // }
+
   render() {
     const contextValue = {
       activities: this.state.activities,
@@ -70,7 +79,9 @@ class App extends Component {
       <div className='App'>
         <ActivityContext.Provider value={contextValue}>
         <header>
-          <Header />
+          <Header 
+            collapsed={this.state.collapsed}
+            navBarToggle={this.navBarToggle}/>
         </header>
         <main className='App__main'>
           {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
