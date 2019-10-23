@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './ActivityListItem.css'
-import ActivityListForm from '../ActivityListForm/ActivityListForm'
+import SearchListBox from '../SearchListBox/SearchListBox'
 import ListItems from '../ListItems/ListItems'
 import { activities } from '../../../src/activities-data'
 
@@ -10,8 +10,16 @@ class Activity extends Component {
       this.state = {
          hasClicked: false,
          activities: [],
+         searchTerm: '',
       }
    }
+
+   updateSearchTerm(term) {
+      console.log(term)
+      this.setState({
+        searchTerm: term
+      })
+    }
 
    componentDidMount() {
       setTimeout(() => {
@@ -23,17 +31,25 @@ class Activity extends Component {
    
    render() {
       const { activities } = this.state
-      console.log(activities)
+      // const list = activities.filter(act => act.company.includes(this.state.searchTerm))
       return (
          <>
             <div className="activities-list">
-               <ActivityListForm />
+               <SearchListBox 
+                  searchTerm={this.state.searchTerm}
+                  handleUpdate={term => this.updateSearchTerm(term)}
+               />
             </div>
 
             <div className="filterable-list">
+               {/* <ListItems 
+                  searchTerm={this.state.searchTerm}
+                  activity={activities}
+               /> */}
                {activities.map(items => 
                   <div className="ListItem" key={items.id}>
                      <ListItems
+                        searchTerm={this.state.searchTerm}
                         title={items.activity_title}
                         company={items.company_name}
                         customer={items.customer_name}
@@ -43,7 +59,6 @@ class Activity extends Component {
                   </div>
                )}
             </div>
-            {/* END LIST ACTIVITY ITEMS */}
          </>
       );
    }

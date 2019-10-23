@@ -17,7 +17,7 @@
          "activity_date": "08/29/19"
       },
       {
-         "id": "3",
+         "id": 3,
          "activity_title": "Activty 3",
          "company_name": "Energy Inc.",
          "customer_name": "John Energy",

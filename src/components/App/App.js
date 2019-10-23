@@ -11,8 +11,7 @@ import './App.css'
 
 
 class App extends Component {
-  state = { hasError: false }
-
+  state = { hasError: false  }
 
   render() {
     return (

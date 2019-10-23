@@ -86,11 +86,15 @@
    text-align: left;
 }
 
+.ListItem-summary {
+   font-size: 14px;
+   text-emphasis: none;
+}
+
 /* CONTROL BAR */
 .ControlBar {
    display: flex;
    flex-direction: row;
-   /* border: solid 1px rgba(0,0,0,0.1); */
    width: 90px;
    justify-content: space-between;
    align-items: center;
@@ -116,12 +120,6 @@
 .ControlBar-btn:not(:disabled):not(.disabled) {
    cursor: pointer;
 }
-
-/* @media screen and (min-width: 1000px){
-   .add-btn {
-      width: 65%;
-   }
-} */
 
 @media screen and (min-width: 768px){
    .search-bar {
