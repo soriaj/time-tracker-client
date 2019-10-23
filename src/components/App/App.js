@@ -5,7 +5,7 @@ import Landing from '../Landing/Landing'
 import Register from '../Register/Register'
 import Login from '../Login/Login'
 import NotFound from '../NotFound/NotFound'
-import ActivityListItem from '../Activity/ActivityListItem'
+import ActivityListItem from '../ActivityListItem/ActivityListItem'
 import AddActivity from '../AddActivity/AddActivity';
 import EditActivity from '../EditActivity/EditActivity'
 import { activities } from '../../../src/activities-data'
