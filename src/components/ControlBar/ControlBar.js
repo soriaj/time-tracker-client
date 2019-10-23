@@ -13,12 +13,8 @@ class ControlBar extends Component {
       deleteActivity(activityId)
    }
 
-   handleEditActivity = () => {
-      const activityId = this.props.id
-      const { editActivity } = this.context
-      editActivity(activityId)
-   }
    render() {
+      // console.log(this.props)
       return (
          <div className="ControlBar">
             <div className="ControlBar-btn">
@@ -33,7 +29,7 @@ class ControlBar extends Component {
                <FontAwesomeIcon 
                   icon={faUserEdit}
                   className="fas fa-edit"
-                  onClick={e => this.handleEditActivity(e)}
+                  onClick={() => this.props.history.push(`/edit/${this.props.id}`)}
                >   
                </FontAwesomeIcon>
             </div>

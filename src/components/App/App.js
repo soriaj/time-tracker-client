@@ -7,6 +7,7 @@ import Login from '../Login/Login'
 import NotFound from '../NotFound/NotFound'
 import ActivityListItem from '../Activity/ActivityListItem'
 import AddActivity from '../AddActivity/AddActivity';
+import EditActivity from '../EditActivity/EditActivity'
 import { activities } from '../../../src/activities-data'
 import ActivityContext from '../../ActivityContext'
 import './App.css'
@@ -42,8 +43,20 @@ class App extends Component {
     }, 200)
   }
 
-  editActivity = activityId => {
-    alert(`You clicked to edit activity: ${activityId}`)
+  editActivity = updatedActivity => {
+    // const foundActivity = activities.find(activity => activity.id == updatedActivity.id)
+    // this.setState({
+    //    id: foundActivity.id,
+    //    summary: foundActivity.summary,
+    //    company: foundActivity.company,
+    //    customer_name: foundActivity.customer_name,
+    //    description: foundActivity.description
+    // })
+    this.setState({
+      activities: this.state.activities.map(activity => 
+        (activity.id !== updatedActivity.id) ? activity : updatedActivity
+      )
+    })
   }
 
   render() {
@@ -66,7 +79,8 @@ class App extends Component {
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
             {/* Activities Will Be Protected Route */}
-            <Route path='/activity' component={ActivityListItem} />
+            <Route exact path='/activity' component={ActivityListItem} />
+            <Route path='/edit/:activityId' component={EditActivity} />
             <Route path='/add-activity' component={AddActivity} />
             <Route component={NotFound} />
           </Switch>

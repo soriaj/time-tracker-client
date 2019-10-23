@@ -21,6 +21,7 @@ class Activity extends Component {
    render() {
       const { searchTerm } = this.state
       const { activities } = this.context
+      // console.log(this.props)
       return (
          <>
             <div className="activities-list">
@@ -40,6 +41,7 @@ class Activity extends Component {
                      name={items.customer}
                      description={items.description}
                      date={items.date}
+                     history={this.props.history}
                   />
                )}
             </div>

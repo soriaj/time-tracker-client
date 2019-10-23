@@ -9,13 +9,13 @@ class AddActivity extends Component {
 
    handleSubmitAddActivity = ev => {
       ev.preventDefault()
-      const { summary, company, customer, description  } = ev.target
+      const { summary, company, customer_name, description  } = ev.target
       const { addActivity } = this.context
       const activity = {
          id: uuid(),
          summary: summary.value,
          company: company.value,
-         customer: customer.value,
+         customer_name: customer_name.value,
          description: description.value,
          date: format(new Date(), 'MM/dd/yyyy')
       }
@@ -23,7 +23,7 @@ class AddActivity extends Component {
       addActivity(activity)
       summary.value = ''
       company.value = ''
-      customer.value = ''
+      customer_name.value = ''
       description.value = ''
       this.props.history.push('/activity')
    }
@@ -51,8 +51,8 @@ class AddActivity extends Component {
                   <label htmlFor="company"><b>Company Name</b></label>
                   <input type="text" placeholder="Enter company Name" name="company" className="textarea" required />
                   
-                  <label htmlFor="customer"><b>Customer Name</b></label>
-                  <input type="text" placeholder="Full Name" name="customer" className="textarea" required />
+                  <label htmlFor="customer_name"><b>Customer Name</b></label>
+                  <input type="text" placeholder="Full Name" name="customer_name" className="textarea" required />
                   
                   <label htmlFor="description"><b>Description</b></label>
                   <textarea className="textarea" name="description" placeholder="Activity description..."></textarea>
