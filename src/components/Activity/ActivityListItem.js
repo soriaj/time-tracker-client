@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartLine, faTrashAlt, faUserEdit } from '@fortawesome/free-solid-svg-icons'
+import SearchListBox from '../SearchListBox/SearchListBox'
 import { format } from 'date-fns'
 import './ActivityListItem.css'
+import activities from '../../../src/activities-data'
 
 class Activity extends Component {
    handleActivitySubmit = () => {
@@ -13,16 +15,7 @@ class Activity extends Component {
       return (
          <>
             <div className="activities-list">
-               <form>
-                  <div className="registration-form">
-                     <h1>Activities</h1>
-                     <hr />
-                     <label htmlFor="search"><b>Search Your Activities</b></label>
-                     <input type="text" placeholder="Search ..." name="search" className="textarea" />
-                  
-                     <button type="button" onClick={this.handleActivitySubmit} className="add-btn">Add Activity</button>
-                  </div>
-               </form>
+               <SearchListBox />
             </div>
 
             <div className="filterable-list">

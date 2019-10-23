@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import { NavLink} from 'react-router-dom'
 import './Landing.css';
 import SignIn from '../SignIn/SignIn';
