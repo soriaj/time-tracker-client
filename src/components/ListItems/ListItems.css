@@ -1,0 +1,58 @@
+/* LIST ITEMS */
+.ListItem {
+   box-shadow: 0 0 1px 0 rgba(0,0,0,0.3);
+   display: flex;
+   justify-content: space-between;
+   padding: 5px;
+   margin-bottom: 5px;
+}
+.ListItem-icon {
+   /* flex: 1; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.ListItem-circle {
+   border-radius: 50%;
+   /* border: 1px solid rgba(0,0,0,0.1); */
+   width: 50px;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: rgba(0,0,0,0.3);
+} 
+.ListItem-content {
+   flex: 5;
+   padding: 2px;
+} 
+.ListItem-heading {
+   display: flex;
+} 
+.ListItem-title {
+   flex: 4;
+   font-size: 1em;
+   font-weight: bold;
+   text-align: left;
+} 
+.ListItem-size {
+   flex: 1;
+   font-size: 0.9em;
+   color: rgba(0,0,0,0.4);
+   text-align: right;
+} 
+.ListItem-actions {
+   display: flex;
+   justify-content: space-between;
+}
+.ListItem-status {
+   flex: 1;
+   font-size: 0.9em;
+   /* color: rgb(46, 184, 230); */
+   text-align: left;
+}
+
+.ListItem-summary {
+   font-size: 14px;
+   text-emphasis: none;
+}

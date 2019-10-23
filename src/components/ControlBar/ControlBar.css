@@ -1,0 +1,29 @@
+/* CONTROL BAR */
+.ControlBar {
+   display: flex;
+   flex-direction: row;
+   width: 90px;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 3px;
+   margin: 2px;
+   color: #7D7D7D;
+}
+.ControlBar-btn {
+   flex: 1;
+   padding: 2px;
+}
+.ControlBar-btn:hover, .ControlBar-btn:focus {
+   color: #212529;
+   text-decoration: none;
+}
+.ControlBar-btn:focus, .ControlBar-btn.focus {
+   outline: 0;
+   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.ControlBar-btn.disabled, .ControlBar-btn:disabled {
+   opacity: 0.65;
+}
+.ControlBar-btn:not(:disabled):not(.disabled) {
+   cursor: pointer;
+}

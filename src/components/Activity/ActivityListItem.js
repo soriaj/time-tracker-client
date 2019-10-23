@@ -18,10 +18,9 @@ class Activity extends Component {
          })
       })
    }
-   handleActivitySubmit = () => {
-      // Should redirect to Add Activity form
-      this.props.history.push('/add-activity')
-   }
+
+   
+
    render() {
       const { activities, searchTerm } = this.state
       return (

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartLine } from '@fortawesome/free-solid-svg-icons'
 import ControlBar from '../ControlBar/ControlBar'
+import './ListItems.css'
 
 class ListItems extends Component {
    render() {  
@@ -19,11 +20,11 @@ class ListItems extends Component {
                   <div className="ListItem-title">Company: {this.props.company}
                      <p className="ListItem-summary">Summary: {this.props.title}</p>
                   </div>
-                  <div className="ListItem-size">{this.props.date}</div>
+                  <div className="ListItem-size">Created: {this.props.date}</div>
                </div>
                <div className="ListItem-actions">
                   <div className="ListItem-status">
-                     <p>{this.props.description}</p>
+                     <p>{this.props.description.slice(0, 50)}{'...'}</p>
                   </div>
                   <ControlBar />
                </div>
