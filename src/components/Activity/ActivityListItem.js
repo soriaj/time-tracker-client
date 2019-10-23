@@ -19,14 +19,21 @@ class Activity extends Component {
       })
    }
 
-   
+   updateSearchTerm = term => {
+      this.setState({
+         searchTerm: term
+      })
+   }
 
    render() {
       const { activities, searchTerm } = this.state
       return (
          <>
             <div className="activities-list">
-               <SearchListBox />
+               <SearchListBox 
+                  searchTerm={this.state.searchTerm}
+                  handleUpdate={term => this.updateSearchTerm(term)}
+               />
             </div>
 
             <div className="filterable-list">
