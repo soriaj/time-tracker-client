@@ -49,7 +49,6 @@ class Header extends Component {
    }
 
    render() {
-      console.log(this.props)
       return <>
          <nav role='navigation' className="navbar">
             <span className="navbar-toggle" 

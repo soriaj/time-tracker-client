@@ -35,8 +35,8 @@
    font-weight: bold;
    text-align: left;
 } 
-.ListItem-size {
-   flex: 1;
+.ListItem-date {
+   flex: 2;
    font-size: 0.9em;
    color: rgba(0,0,0,0.4);
    text-align: right;

@@ -14,7 +14,6 @@ class App extends Component {
   state = { hasError: false  }
 
   render() {
-    console.log(this.props)
     return (
       <div className='App'>
         <header>

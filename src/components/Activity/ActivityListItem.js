@@ -26,7 +26,6 @@ class Activity extends Component {
 
    render() {
       const { activities, searchTerm } = this.state
-      console.log(activities)
       return (
          <>
             <div className="activities-list">
