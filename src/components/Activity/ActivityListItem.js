@@ -7,7 +7,7 @@ import ActivityContext from '../../ActivityContext'
 
 class Activity extends Component {
    static contextType = ActivityContext
-   
+
    state = {
       activities: [],
       searchTerm: '',
@@ -35,6 +35,7 @@ class Activity extends Component {
                {activities.filter(activity => activity.company.toLowerCase().includes(searchTerm.toLowerCase()))
                .map(items => 
                   <ListItems key={items.id} 
+                     id={items.id}
                      company={items.company}
                      title={items.summary}
                      name={items.customer}

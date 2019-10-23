@@ -4,7 +4,6 @@ import './SearchBox.css'
 
 class SearchBox extends Component {
    render() {
-      console.log(this.props)
       return (
          <form>
             <div className="registration-form">

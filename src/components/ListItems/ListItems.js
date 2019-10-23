@@ -6,6 +6,7 @@ import './ListItems.css'
 
 class ListItems extends Component {
    render() {  
+      // console.log(this.props)
       return (
          <>
          <div className="ListItem">
@@ -25,7 +26,7 @@ class ListItems extends Component {
                   <div className="ListItem-status">
                      <p>{this.props.description.slice(0, 50)}{'...'}</p>
                   </div>
-                  <ControlBar />
+                  <ControlBar id={this.props.id}/>
                </div>
             </div>
          </div>

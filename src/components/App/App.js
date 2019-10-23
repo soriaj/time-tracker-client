@@ -32,10 +32,21 @@ class App extends Component {
     })
   }
 
+  deleteActivity = activityId => {
+    const currentActivities = this.state.activities
+    const newActivities = currentActivities.filter(activity => activity.id !== activityId)
+    setTimeout(() => {
+      this.setState({
+        activities: newActivities
+      })
+    }, 200)
+  }
+
   render() {
     const contextValue = {
       activities: this.state.activities,
       addActivity: this.addActivity,
+      deleteActivity: this.deleteActivity,
     }
     return (
       <div className='App'>
