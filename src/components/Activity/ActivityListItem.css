@@ -40,13 +40,13 @@
    padding: 5px;
    margin-bottom: 5px;
 }
-.ListItem__icon {
+.ListItem-icon {
    /* flex: 1; */
    display: flex;
    justify-content: center;
    align-items: center;
 }
-.ListItem__circle {
+.ListItem-circle {
    border-radius: 50%;
    /* border: 1px solid rgba(0,0,0,0.1); */
    width: 50px;
@@ -56,30 +56,30 @@
    align-items: center;
    color: rgba(0,0,0,0.3);
 } 
-.ListItem__content {
+.ListItem-content {
    flex: 5;
    padding: 2px;
 } 
-.ListItem__heading {
+.ListItem-heading {
    display: flex;
 } 
-.ListItem__title {
+.ListItem-title {
    flex: 4;
    font-size: 1em;
    font-weight: bold;
    text-align: left;
 } 
-.ListItem__size {
+.ListItem-size {
    flex: 1;
    font-size: 0.9em;
    color: rgba(0,0,0,0.4);
    text-align: right;
 } 
-.ListItem__actions {
+.ListItem-actions {
    display: flex;
    justify-content: space-between;
 }
-.ListItem__status {
+.ListItem-status {
    flex: 1;
    font-size: 0.9em;
    /* color: rgb(46, 184, 230); */
@@ -102,22 +102,22 @@
    margin: 2px;
    color: #7D7D7D;
 }
-.ControlBar__btn {
+.ControlBar-btn {
    flex: 1;
    padding: 2px;
 }
-.ControlBar__btn:hover, .ControlBar__btn:focus {
+.ControlBar-btn:hover, .ControlBar-btn:focus {
    color: #212529;
    text-decoration: none;
 }
-.ControlBar__btn:focus, .ControlBar__btn.focus {
+.ControlBar-btn:focus, .ControlBar-btn.focus {
    outline: 0;
    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
-.ControlBar__btn.disabled, .ControlBar__btn:disabled {
+.ControlBar-btn.disabled, .ControlBar-btn:disabled {
    opacity: 0.65;
 }
-.ControlBar__btn:not(:disabled):not(.disabled) {
+.ControlBar-btn:not(:disabled):not(.disabled) {
    cursor: pointer;
 }
 

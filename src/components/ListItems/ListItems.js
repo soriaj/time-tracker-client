@@ -6,10 +6,6 @@ import ControlBar from '../ControlBar/ControlBar'
 
 class ListItems extends Component {
    render() {  
-      const { searchTerm } = this.props
-      console.log(this.props)
-      // const list = activity.filter(act => act.company_name.includes(searchTerm))
-      //    .map((act, id) => <Item {...act} key={id} />)
       return (
          <>
          <div className="ListItem">
