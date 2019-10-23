@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserClock, faBars } from '@fortawesome/free-solid-svg-icons'
 // import TokenService from '../../services/token-service'
@@ -57,12 +57,12 @@ class Header extends Component {
             >
                <FontAwesomeIcon icon={faBars} className="fas fa-bars"></FontAwesomeIcon>
             </span>
-            <Link to="/" className="logo">
+            <NavLink to="/" className="logo">
                <FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
                </FontAwesomeIcon>
                Time Tracker
-            </Link>
-            {true
+            </NavLink>
+            {false
                ? this.renderLogoutLink()
                : this.renderLoginLink()
             }

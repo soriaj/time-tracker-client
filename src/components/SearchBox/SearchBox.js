@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import './SearchListBox.css'
+import './SearchBox.css'
 
-class SearchListBox extends Component {
+class SearchBox extends Component {
    render() {
       return (
          <form>
@@ -27,4 +27,4 @@ class SearchListBox extends Component {
    }
 }
 
-export default SearchListBox;
+export default SearchBox;

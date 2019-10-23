@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SearchListBox from '../SearchListBox/SearchListBox'
+import SearchBox from '../SearchBox/SearchBox'
 import ListItems from '../ListItems/ListItems'
 import './ActivityListItem.css'
 import { activities } from '../../../src/activities-data'
@@ -24,14 +24,21 @@ class Activity extends Component {
       })
    }
 
+   updateActivitiesList = activity => {
+      this.setState({
+         activities: [this.state.activities, ...activity]
+      })
+   }
+
    render() {
       const { activities, searchTerm } = this.state
       return (
          <>
             <div className="activities-list">
-               <SearchListBox 
+               <SearchBox 
                   searchTerm={searchTerm}
                   handleUpdate={term => this.updateSearchTerm(term)}
+                  handleActivityUpdate={this.updateActivitiesList}
                />
             </div>
 

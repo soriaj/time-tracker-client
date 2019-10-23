@@ -3,8 +3,6 @@ import { format } from 'date-fns'
 import './AddActivity.css'
 
 class AddActivity extends Component {
-   
-
    handleSubmitAddActivity = ev => {
       ev.preventDefault()
       alert('You added a activity')
