@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { NavLink} from 'react-router-dom'
 import './Landing.css';
 import SignIn from '../SignIn/SignIn';
@@ -6,7 +7,7 @@ import SignIn from '../SignIn/SignIn';
 class Landing extends Component {
    render() {
       return (
-         <div className="registration">
+         <div className="welcome">
             <h1>Welcome to Time Tracker</h1>
             <p>An application for those that want to keep track of their customer acitivies organized and readily availabe for review</p>
             <div>

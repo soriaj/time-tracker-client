@@ -33,25 +33,6 @@ class ListItems extends Component {
                </div>
             </div>
          </div>
-         {/* <div className="ListItem-icon">
-            <div className="ListItem-circle">
-               <FontAwesomeIcon icon={faChartLine} className="fas fa-chart-line"></FontAwesomeIcon>
-            </div>
-         </div>
-         <div className="ListItem-content">
-            <div className="ListItem-heading">
-               <div className="ListItem-title">Company: {company}
-                  <p className="ListItem-summary">Summary: {title}</p>
-               </div>
-               <div className="ListItem-size">{date}</div>
-            </div>
-            <div className="ListItem-actions">
-               <div className="ListItem-status">
-                  <p>{description.slice(0, 50)}</p>
-               </div>
-               <ControlBar />
-            </div>
-         </div> */}
          </>
       );
    }

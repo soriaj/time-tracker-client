@@ -49,7 +49,7 @@ class Header extends Component {
    }
 
    render() {
-      // console.log(this.props)
+      console.log(this.props)
       return <>
          <nav role='navigation' className="navbar">
             <span className="navbar-toggle" 
@@ -63,7 +63,7 @@ class Header extends Component {
                </FontAwesomeIcon>
                Time Tracker
             </Link>
-            {false
+            {true
                ? this.renderLogoutLink()
                : this.renderLoginLink()
             }

@@ -1,63 +1,53 @@
 import React, { Component } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChartLine, faTrashAlt, faUserEdit } from '@fortawesome/free-solid-svg-icons'
+import { format } from 'date-fns'
 import './ActivityListItem.css'
-import SearchListBox from '../SearchListBox/SearchListBox'
-import ListItems from '../ListItems/ListItems'
-import { activities } from '../../../src/activities-data'
 
 class Activity extends Component {
-   constructor(props){
-      super(props) 
-      this.state = {
-         hasClicked: false,
-         activities: [],
-         searchTerm: '',
-      }
+   handleActivitySubmit = () => {
+      // Should redirect to Add Activity form
+      this.props.history.push('/add-activity')
    }
-
-   updateSearchTerm(term) {
-      console.log(term)
-      this.setState({
-        searchTerm: term
-      })
-    }
-
-   componentDidMount() {
-      setTimeout(() => {
-         this.setState({
-            activities: activities
-         })
-      }, 200)
-   }
-   
    render() {
-      const { activities } = this.state
-      // const list = activities.filter(act => act.company.includes(this.state.searchTerm))
       return (
          <>
             <div className="activities-list">
-               <SearchListBox 
-                  searchTerm={this.state.searchTerm}
-                  handleUpdate={term => this.updateSearchTerm(term)}
-               />
+               <form>
+                  <div className="registration-form">
+                     <h1>Activities</h1>
+                     <hr />
+                     <label htmlFor="search"><b>Search Your Activities</b></label>
+                     <input type="text" placeholder="Search ..." name="search" className="textarea" />
+                  
+                     <button type="button" onClick={this.handleActivitySubmit} className="add-btn">Add Activity</button>
+                  </div>
+               </form>
             </div>
 
             <div className="filterable-list">
-               {/* <ListItems 
-                  searchTerm={this.state.searchTerm}
-                  activity={activities}
-               /> */}
-               {activities.map(items => 
-                  <div className="ListItem" key={items.id}>
-                     <ListItems
-                        searchTerm={this.state.searchTerm}
-                        title={items.activity_title}
-                        company={items.company_name}
-                        customer={items.customer_name}
-                        description={items.description}
-                        date={items.activity_date}
-                     />
+               <div className="ListItem">
+                  <div className="ListItem__icon">
+                     <div className="ListItem__circle">
+                        <FontAwesomeIcon icon={faChartLine} className="fas fa-chart-line"></FontAwesomeIcon>
+                     </div>
                   </div>
-               )}
+                  <div className="ListItem__content">
+                     <div className="ListItem__heading">
+                        <div className="ListItem__title">Activity One Summary</div>
+                        <div className="ListItem__size">{`Created: ${format(new Date(), 'MM/dd/yyyy')}`}</div>
+                     </div>
+                     <div className="ListItem__actions">
+                        <div className="ListItem__status">
+                           <p>Description of Activity .... </p>
+                        </div>
+                        <div className="ControlBar">
+                           <div className="ControlBar__btn"><FontAwesomeIcon icon={faTrashAlt} className="fas fa-trash-alt"></FontAwesomeIcon></div>
+                           <div className="ControlBar__btn"><FontAwesomeIcon icon={faUserEdit} className="fas fa-edit"></FontAwesomeIcon></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
          </>
       );
