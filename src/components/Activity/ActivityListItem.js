@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import SearchListBox from '../SearchListBox/SearchListBox'
 import ListItems from '../ListItems/ListItems'
-import { format } from 'date-fns'
 import './ActivityListItem.css'
 import { activities } from '../../../src/activities-data'
 
@@ -27,17 +26,19 @@ class Activity extends Component {
 
    render() {
       const { activities, searchTerm } = this.state
+      console.log(activities)
       return (
          <>
             <div className="activities-list">
                <SearchListBox 
-                  searchTerm={this.state.searchTerm}
+                  searchTerm={searchTerm}
                   handleUpdate={term => this.updateSearchTerm(term)}
                />
             </div>
 
             <div className="filterable-list">
-               {activities.map(items => 
+               {activities.filter(activity => activity.company.toLowerCase().includes(searchTerm.toLowerCase()))
+               .map(items => 
                   <ListItems key={items.id} 
                      company={items.company}
                      title={items.summary}
