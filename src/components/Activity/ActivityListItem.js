@@ -2,19 +2,19 @@ import React, { Component } from 'react'
 import SearchBox from '../SearchBox/SearchBox'
 import ListItems from '../ListItems/ListItems'
 import './ActivityListItem.css'
-import { activities } from '../../../src/activities-data'
+import ActivityContext from '../../ActivityContext'
+// import { activities } from '../../../src/activities-data'
 
 class Activity extends Component {
    state = {
       activities: [],
       searchTerm: '',
    }
+   static contextType = ActivityContext
 
    componentDidMount(){
-      setTimeout(() => {
-         this.setState({
-            activities: activities
-         })
+      this.setState({
+         activities: this.context.activities
       })
    }
 
@@ -24,21 +24,18 @@ class Activity extends Component {
       })
    }
 
-   updateActivitiesList = activity => {
-      this.setState({
-         activities: [this.state.activities, ...activity]
-      })
-   }
-
    render() {
-      const { activities, searchTerm } = this.state
+      // const { activities, searchTerm } = this.state
+      const { searchTerm } = this.state
+      const { activities } = this.context
+      console.log(this.context)
       return (
          <>
             <div className="activities-list">
                <SearchBox 
                   searchTerm={searchTerm}
                   handleUpdate={term => this.updateSearchTerm(term)}
-                  handleActivityUpdate={this.updateActivitiesList}
+                  // addActivity={this.addActivity}
                />
             </div>
 

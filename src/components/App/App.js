@@ -7,15 +7,39 @@ import Login from '../Login/Login'
 import NotFound from '../NotFound/NotFound'
 import ActivityListItem from '../Activity/ActivityListItem'
 import AddActivity from '../AddActivity/AddActivity';
+import { activities } from '../../../src/activities-data'
+import ActivityContext from '../../ActivityContext'
 import './App.css'
 
 
 class App extends Component {
-  state = { hasError: false  }
+  state = {
+    hasError: false,
+    activities: [],
+  }
+
+  static contextType = ActivityContext
+
+  componentDidMount(){
+    this.setState({
+       activities: activities
+    })
+  }
+
+  addActivity = activity => {
+    this.setState({
+       activities: [this.state.activities, ...activity]
+    })
+  }
 
   render() {
+    const contextValue = {
+      activities: this.state.activities,
+      addActivity: this.addActivity,
+    }
     return (
       <div className='App'>
+        <ActivityContext.Provider value={contextValue}>
         <header>
           <Header />
         </header>
@@ -31,6 +55,7 @@ class App extends Component {
             <Route component={NotFound} />
           </Switch>
         </main>
+        </ActivityContext.Provider>
       </div>
     )
   }

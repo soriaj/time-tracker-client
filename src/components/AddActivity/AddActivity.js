@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import { format } from 'date-fns'
 import './AddActivity.css'
+import ActivityContext from '../../ActivityContext'
 
 class AddActivity extends Component {
+   static contextType = ActivityContext
+
    handleSubmitAddActivity = ev => {
       ev.preventDefault()
       alert('You added a activity')
@@ -13,6 +16,7 @@ class AddActivity extends Component {
    }
 
    render() {
+      console.log(this.context)
       return (
          <div className="registration">
             <form onSubmit={this.handleSubmitAddActivity} >
