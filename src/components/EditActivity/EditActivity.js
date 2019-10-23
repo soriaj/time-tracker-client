@@ -22,6 +22,7 @@ class EditActivity extends Component {
    componentDidMount(){
       const { activityId } = this.props.match.params
       const { activities } = this.context
+      // eslint-disable-next-line eqeqeq
       const foundActivity = activities.find(activity => activity.id == activityId)
       this.setState({
          id: foundActivity.id,
