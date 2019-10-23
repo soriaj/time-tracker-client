@@ -3,7 +3,6 @@ import SearchBox from '../SearchBox/SearchBox'
 import ListItems from '../ListItems/ListItems'
 import './ActivityListItem.css'
 import ActivityContext from '../../ActivityContext'
-// import { activities } from '../../../src/activities-data'
 
 class Activity extends Component {
    static contextType = ActivityContext

@@ -42,6 +42,10 @@ class App extends Component {
     }, 200)
   }
 
+  editActivity = activityId => {
+    
+  }
+
   render() {
     const contextValue = {
       activities: this.state.activities,

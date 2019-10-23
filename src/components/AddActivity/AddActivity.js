@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { format } from 'date-fns'
 import './AddActivity.css'
 import ActivityContext from '../../ActivityContext'
+import uuid from 'uuidv4'
 
 class AddActivity extends Component {
    static contextType = ActivityContext
@@ -9,9 +10,9 @@ class AddActivity extends Component {
    handleSubmitAddActivity = ev => {
       ev.preventDefault()
       const { summary, company, customer, description  } = ev.target
-      const { activities, addActivity } = this.context
+      const { addActivity } = this.context
       const activity = {
-         id: activities.length + 1,
+         id: uuid(),
          summary: summary.value,
          company: company.value,
          customer: customer.value,
