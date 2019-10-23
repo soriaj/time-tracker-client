@@ -12,6 +12,12 @@ class ControlBar extends Component {
       const { deleteActivity } = this.context
       deleteActivity(activityId)
    }
+
+   handleEditActivity = () => {
+      const activityId = this.props.id
+      const { editActivity } = this.context
+      editActivity(activityId)
+   }
    render() {
       return (
          <div className="ControlBar">
@@ -24,7 +30,12 @@ class ControlBar extends Component {
                </FontAwesomeIcon>
             </div>
             <div className="ControlBar-btn">
-               <FontAwesomeIcon icon={faUserEdit} className="fas fa-edit"></FontAwesomeIcon>
+               <FontAwesomeIcon 
+                  icon={faUserEdit}
+                  className="fas fa-edit"
+                  onClick={e => this.handleEditActivity(e)}
+               >   
+               </FontAwesomeIcon>
             </div>
          </div>
       );

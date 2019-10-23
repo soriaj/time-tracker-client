@@ -43,7 +43,7 @@ class App extends Component {
   }
 
   editActivity = activityId => {
-    
+    alert(`You clicked to edit activity: ${activityId}`)
   }
 
   render() {
@@ -51,6 +51,7 @@ class App extends Component {
       activities: this.state.activities,
       addActivity: this.addActivity,
       deleteActivity: this.deleteActivity,
+      editActivity: this.editActivity,
     }
     return (
       <div className='App'>
