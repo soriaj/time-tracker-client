@@ -1,53 +1,47 @@
 import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChartLine, faTrashAlt, faUserEdit } from '@fortawesome/free-solid-svg-icons'
-import { format } from 'date-fns'
 import './ActivityListItem.css'
+import ActivityListForm from '../ActivityListForm/ActivityListForm'
+import ListItems from '../ListItems/ListItems'
+import { activities } from '../../../src/activities-data'
 
 class Activity extends Component {
-   handleActivitySubmit = () => {
-      // Should redirect to Add Activity form
-      this.props.history.push('/add-activity')
+   constructor(props){
+      super(props) 
+      this.state = {
+         hasClicked: false,
+         activities: [],
+      }
    }
+
+   componentDidMount() {
+      setTimeout(() => {
+         this.setState({
+            activities: activities
+         })
+      }, 200)
+   }
+   
    render() {
+      const { activities } = this.state
+      console.log(activities)
       return (
          <>
             <div className="activities-list">
-               <form>
-                  <div className="registration-form">
-                     <h1>Activities</h1>
-                     <hr />
-                     <label htmlFor="search"><b>Search Your Activities</b></label>
-                     <input type="text" placeholder="Search ..." name="search" className="textarea" />
-                  
-                     <button type="button" onClick={this.handleActivitySubmit} className="add-btn">Add Activity</button>
-                  </div>
-               </form>
+               <ActivityListForm />
             </div>
 
             <div className="filterable-list">
-               <div className="ListItem">
-                  <div className="ListItem__icon">
-                     <div className="ListItem__circle">
-                        <FontAwesomeIcon icon={faChartLine} className="fas fa-chart-line"></FontAwesomeIcon>
-                     </div>
+               {activities.map(items => 
+                  <div className="ListItem" key={items.id}>
+                     <ListItems
+                        title={items.activity_title}
+                        company={items.company_name}
+                        customer={items.customer_name}
+                        description={items.description}
+                        date={items.activity_date}
+                     />
                   </div>
-                  <div className="ListItem__content">
-                     <div className="ListItem__heading">
-                        <div className="ListItem__title">Activity One Summary</div>
-                        <div className="ListItem__size">{`Created: ${format(new Date(), 'MM/dd/yyyy')}`}</div>
-                     </div>
-                     <div className="ListItem__actions">
-                        <div className="ListItem__status">
-                           <p>Description of Activity .... </p>
-                        </div>
-                        <div className="ControlBar">
-                           <div className="ControlBar__btn"><FontAwesomeIcon icon={faTrashAlt} className="fas fa-trash-alt"></FontAwesomeIcon></div>
-                           <div className="ControlBar__btn"><FontAwesomeIcon icon={faUserEdit} className="fas fa-edit"></FontAwesomeIcon></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+               )}
             </div>
             {/* END LIST ACTIVITY ITEMS */}
          </>
