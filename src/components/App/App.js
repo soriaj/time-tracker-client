@@ -7,6 +7,7 @@ import Login from '../Login/Login'
 import NotFound from '../NotFound/NotFound'
 import ActivityListItem from '../ActivityListItem/ActivityListItem'
 import AddActivity from '../AddActivity/AddActivity';
+import ViewActivity from '../ViewActivity/ViewActivity'
 import EditActivity from '../EditActivity/EditActivity'
 import { activities } from '../../../src/activities-data'
 import ActivityContext from '../../ActivityContext'
@@ -45,28 +46,12 @@ class App extends Component {
   }
 
   editActivity = updatedActivity => {
-    // const foundActivity = activities.find(activity => activity.id == updatedActivity.id)
-    // this.setState({
-    //    id: foundActivity.id,
-    //    summary: foundActivity.summary,
-    //    company: foundActivity.company,
-    //    customer_name: foundActivity.customer_name,
-    //    description: foundActivity.description
-    // })
     this.setState({
       activities: this.state.activities.map(activity => 
         (activity.id !== updatedActivity.id) ? activity : updatedActivity
       )
     })
   }
-
-  // navBarToggle = () => {
-  //   this.setState({
-  //      collapsed: !this.state.collapsed
-  //   })
-  //   let mainNav = document.getElementById('js-menu');
-  //   mainNav.classList.toggle('active');
-  // }
 
   render() {
     const contextValue = {
@@ -91,6 +76,7 @@ class App extends Component {
             <Route path='/login' component={Login} />
             {/* Activities Will Be Protected Route */}
             <Route exact path='/activity' component={ActivityListItem} />
+            <Route exact path='/activity/:activityId' component={ViewActivity} />
             <Route path='/edit/:activityId' component={EditActivity} />
             <Route path='/add-activity' component={AddActivity} />
             <Route component={NotFound} />
