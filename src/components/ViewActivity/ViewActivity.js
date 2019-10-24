@@ -6,9 +6,10 @@ class ViewActivity extends Component {
    static contextType = ActivityContext
 
    componentDidMount(){
-
+      const { activityId } = this.props.match.params
+      console.log(activityId)
    }
-   
+
    render() {
       return (
          <div>
