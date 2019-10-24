@@ -53,7 +53,7 @@ class Header extends Component {
    }
 
    render() {
-      const collapsed = this.state.collapsed
+      // const collapsed = this.state.collapsed
       // console.log(collapsed)
       return (
          <>
