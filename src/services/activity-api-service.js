@@ -16,6 +16,17 @@ const ActivityApiService = {
             ? res.json().then(e => Promise.reject(e))
             : res.json()
          )
+   },
+   deleteActivity(activityId) {
+      return fetch(`${config.API_ENDPOINT}/activities/${activityId}`, {
+         method: 'DELETE'  
+      })
+      .then(res => 
+         (!res.ok)
+         ? res.json().then(e => Promise.reject(e))
+         : res.json()
+      )
+
    }
 }
 

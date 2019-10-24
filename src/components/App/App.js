@@ -9,10 +9,10 @@ import ActivityListItem from '../ActivityListItem/ActivityListItem'
 import AddActivity from '../AddActivity/AddActivity';
 import ViewActivity from '../ViewActivity/ViewActivity'
 import EditActivity from '../EditActivity/EditActivity'
-import { activities } from '../../../src/activities-data'
+// import { activities } from '../../../src/activities-data'
 import ActivityContext from '../../ActivityContext'
 
-import config from '../../config'
+// import config from '../../config'
 import ActivityApiService from '../../services/activity-api-service'
 import './App.css'
 
