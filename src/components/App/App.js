@@ -11,6 +11,9 @@ import ViewActivity from '../ViewActivity/ViewActivity'
 import EditActivity from '../EditActivity/EditActivity'
 import { activities } from '../../../src/activities-data'
 import ActivityContext from '../../ActivityContext'
+
+import config from '../../config'
+import ActivityApiService from '../../services/activity-api-service'
 import './App.css'
 
 
@@ -24,8 +27,11 @@ class App extends Component {
   static contextType = ActivityContext
 
   componentDidMount(){
-    this.setState({
-       activities: activities
+    ActivityApiService.getActivities()
+    .then(activities => {
+      this.setState({
+        activities: activities
+      })
     })
   }
 
