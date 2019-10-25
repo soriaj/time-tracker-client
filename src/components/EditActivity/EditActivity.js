@@ -33,7 +33,7 @@ class EditActivity extends Component {
                description: activity.description,
                date: activity.date
             })
-            .catch(error => this.setState({ error: error }))
+            // .catch(error => this.setState({ error: error }))
       })
       // eslint-disable-next-line eqeqeq
       // const foundActivity = activities.find(activity => activity.id == activityId)
@@ -65,9 +65,7 @@ class EditActivity extends Component {
    handleEditActivity = e => {
       e.preventDefault()
       const activityId = this.props.match.params.id
-
       const { id, summary, company, customer_name, description } = this.state
-      const { editActivity } = this.context
       const updatedActivity = {
          id,
          summary,
@@ -76,20 +74,30 @@ class EditActivity extends Component {
          description,
          date: format(new Date(), 'MM/dd/yyyy')
       }
-      
+      // const { editActivity } = this.context
+
       ActivityApiService.editActivity(activityId, updatedActivity)
-      .then(() => {
-         this.setState({
-            summary: '',
-            company: '',
-            customer_name: '',
-            description: '',
-            date: '',
+      // fetch(`${config.API_ENDPOINT}/activities/${activityId}`, {
+      //    method: 'PATCH',
+      //    body: JSON.stringify(updatedActivity)
+      // })
+      // .then(res => {
+      //    (!res.ok)
+      //       ? res.json().then(e => Promise.reject(e))
+      //       : res.json()
+      // })
+         .then(() => {
+            this.setState({
+               summary: '',
+               company: '',
+               customer_name: '',
+               description: '',
+               date: '',
+            })
+            this.context.editActivity(updatedActivity)
+            this.props.history.push(`/activity/`)
          })
-         editActivity(updatedActivity)
-         this.props.history.push('/activity')
-      })
-      .catch(error => this.setState({ error: error }))
+         .catch(error => this.setState({ error: error }))
    }
 
    handleCancel = () => {
@@ -97,6 +105,7 @@ class EditActivity extends Component {
    }
 
    render() {
+      // console.log(this.state)
       const { summary, company, customer_name, description } = this.state
       return (
          <div className="registration">
