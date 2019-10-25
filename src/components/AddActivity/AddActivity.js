@@ -2,16 +2,22 @@ import React, { Component } from 'react'
 import { format } from 'date-fns'
 import './AddActivity.css'
 import ActivityContext from '../../ActivityContext'
+import ActivityApiService from '../../services/activity-api-service'
 import uuid from 'uuidv4'
 
 class AddActivity extends Component {
+   static defaultProps = {
+      addActivity: () => {}
+   }
    static contextType = ActivityContext
 
-   handleSubmitAddActivity = ev => {
-      ev.preventDefault()
-      const { summary, company, customer_name, description  } = ev.target
+   state = { error: null }
+
+   handleAddActivity = e => {
+      e.preventDefault()
+      const { summary, company, customer_name, description } = e.target
       const { addActivity } = this.context
-      const activity = {
+      const newActivity = {
          id: uuid(),
          summary: summary.value,
          company: company.value,
@@ -20,12 +26,17 @@ class AddActivity extends Component {
          date: format(new Date(), 'MM/dd/yyyy')
       }
       
-      addActivity(activity)
-      summary.value = ''
-      company.value = ''
-      customer_name.value = ''
-      description.value = ''
-      this.props.history.push('/activity')
+      this.setState({ error: null })
+      ActivityApiService.addActivity(newActivity)
+         .then(data => {
+            summary.value = ''
+            company.value = ''
+            customer_name.value = ''
+            description.value = ''
+            addActivity(newActivity)
+            this.props.history.push('/activity')
+         })
+         .catch(error => this.setState({ error }))
    }
 
    handleCancel = () => {
@@ -35,7 +46,7 @@ class AddActivity extends Component {
    render() {
       return (
          <div className="registration">
-            <form onSubmit={this.handleSubmitAddActivity} >
+            <form onSubmit={this.handleAddActivity} >
                <div className="registration-form">
                   <h2>{`Date Modified: ${format(new Date(), 'MM/dd/yyyy')}`} </h2>
                   <hr />

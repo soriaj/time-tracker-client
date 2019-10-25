@@ -19,7 +19,7 @@ import './App.css'
 
 class App extends Component {
   state = {
-    hasError: false,
+    error: null,
     activities: [],
     collapsed: false,
   }
@@ -33,6 +33,7 @@ class App extends Component {
         activities: activities
       })
     })
+    .catch(error => this.setState({ error }))
   }
 
   addActivity = activity => {
@@ -52,11 +53,13 @@ class App extends Component {
   }
 
   editActivity = updatedActivity => {
-    this.setState({
-      activities: this.state.activities.map(activity => 
-        (activity.id !== updatedActivity.id) ? activity : updatedActivity
-      )
-    })
+    setTimeout(() => {
+      this.setState({
+        activities: this.state.activities.map(activity => 
+          (activity.id !== updatedActivity.id) ? activity : updatedActivity
+        )
+      })
+    }, 200)
   }
 
   render() {
@@ -75,16 +78,21 @@ class App extends Component {
             navBarToggle={this.navBarToggle}/>
         </header>
         <main className='App__main'>
-          {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
+          {this.state.error && <p className='red'>There was an error! Oh no!</p>}
           <Switch>
             <Route exact path='/' component={Landing} />
+            
+            {/* PUBLIC ROUTES */}
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
-            {/* Activities Will Be Protected Route */}
+
+            {/* Protected Route */}
             <Route exact path='/activity' component={ActivityListItem} />
             <Route exact path='/activity/:activityId' component={ViewActivity} />
             <Route path='/edit/:activityId' component={EditActivity} />
             <Route path='/add-activity' component={AddActivity} />
+            
+            {/* NOT FOUND ROUTE */}
             <Route component={NotFound} />
           </Switch>
         </main>
