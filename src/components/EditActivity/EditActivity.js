@@ -24,15 +24,16 @@ class EditActivity extends Component {
       const { activityId } = this.props.match.params
       // const { activities } = this.context
       ActivityApiService.getActivity(activityId)
-      .then(activity => {
-         this.setState({
-            id: activity.id,
-            summary: activity.summary,
-            company: activity.company,
-            customer_name: activity.customer_name,
-            description: activity.description,
-            date: activity.date
-         })
+         .then(activity => {
+            this.setState({
+               id: activity.id,
+               summary: activity.summary,
+               company: activity.company,
+               customer_name: activity.customer_name,
+               description: activity.description,
+               date: activity.date
+            })
+            .catch(error => this.setState({ error: error }))
       })
       // eslint-disable-next-line eqeqeq
       // const foundActivity = activities.find(activity => activity.id == activityId)
@@ -61,9 +62,9 @@ class EditActivity extends Component {
       this.setState({ description: e.target.value })
    }
 
-   handleEditActivity = ev => {
-      ev.preventDefault()
-      // const activityId = this.props.match.params.id
+   handleEditActivity = e => {
+      e.preventDefault()
+      const activityId = this.props.match.params.id
 
       const { id, summary, company, customer_name, description } = this.state
       const { editActivity } = this.context

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt, faUserEdit } from '@fortawesome/free-solid-svg-icons'
 import ActivityContext from '../../ActivityContext'
+import ActivityApiService from '../../services/activity-api-service'
 import './ControlBar.css'
 
 class ControlBar extends Component {
@@ -11,7 +12,12 @@ class ControlBar extends Component {
       e.stopPropagation()
       const activityId = this.props.id
       const { deleteActivity } = this.context
-      deleteActivity(activityId)
+      ActivityApiService.deleteActivity(activityId)
+         .then(() => {
+            deleteActivity(activityId)
+            this.props.history.push('/activity')
+         })
+         .catch(error => console.log(error))
    }
 
    handleEditActivity = e => {
