@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ActivityContext from '../../ActivityContext'
+import ActivityApiService from '../../services/activity-api-service'
 
 class ViewActivity extends Component {
    state = {
@@ -17,19 +18,30 @@ class ViewActivity extends Component {
    componentDidMount(){
       // FETCH ACTIVTY
       const { activityId } = this.props.match.params
-      const { activities } = this.context
-      // eslint-disable-next-line eqeqeq
-      const foundActivity = activities.find(activity => activity.id == activityId)
-      setTimeout(() => {
+      ActivityApiService.getActivity(activityId)
+      .then(activity => {
          this.setState({
-            id: foundActivity.id,
-            summary: foundActivity.summary,
-            company: foundActivity.company,
-            customer_name: foundActivity.customer_name,
-            description: foundActivity.description,
-            date: foundActivity.date
+            id: activity.id,
+            summary: activity.summary,
+            company: activity.company,
+            customer_name: activity.customer_name,
+            description: activity.description,
+            date: activity.date
          })
       })
+      // const { activities } = this.context
+      // // eslint-disable-next-line eqeqeq
+      // const foundActivity = activities.find(activity => activity.id == activityId)
+      // setTimeout(() => {
+      //    this.setState({
+      //       id: foundActivity.id,
+      //       summary: foundActivity.summary,
+      //       company: foundActivity.company,
+      //       customer_name: foundActivity.customer_name,
+      //       description: foundActivity.description,
+      //       date: foundActivity.date
+      //    })
+      // })
    }
 
    renderActivity() {

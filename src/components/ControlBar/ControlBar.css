@@ -27,3 +27,6 @@
 .ControlBar-btn:not(:disabled):not(.disabled) {
    cursor: pointer;
 }
+.fas {
+   font-size: 25px;
+}

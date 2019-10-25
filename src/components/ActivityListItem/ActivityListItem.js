@@ -3,7 +3,7 @@ import SearchBox from '../SearchBox/SearchBox'
 import ListItems from '../ListItems/ListItems'
 import './ActivityListItem.css'
 import ActivityContext from '../../ActivityContext'
-import ActivityApiService from '../../services/activity-api-service'
+// import ActivityApiService from '../../services/activity-api-service'
 
 class Activity extends Component {
    static contextType = ActivityContext
@@ -21,7 +21,7 @@ class Activity extends Component {
    render() {
       const { searchTerm } = this.state
       const { activities } = this.context
-      console.log(this.context)
+      // console.log(this.context)
       return (
          <>
             <div className="activities-list">

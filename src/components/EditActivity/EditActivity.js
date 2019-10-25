@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { format } from 'date-fns'
 import ActivityContext from '../../ActivityContext'
+import ActivityApiService from '../../services/activity-api-service'
 
 class EditActivity extends Component {
    static defaultProps = {
@@ -21,16 +22,27 @@ class EditActivity extends Component {
 
    componentDidMount(){
       const { activityId } = this.props.match.params
-      const { activities } = this.context
-      // eslint-disable-next-line eqeqeq
-      const foundActivity = activities.find(activity => activity.id == activityId)
-      this.setState({
-         id: foundActivity.id,
-         summary: foundActivity.summary,
-         company: foundActivity.company,
-         customer_name: foundActivity.customer_name,
-         description: foundActivity.description
+      // const { activities } = this.context
+      ActivityApiService.getActivity(activityId)
+      .then(activity => {
+         this.setState({
+            id: activity.id,
+            summary: activity.summary,
+            company: activity.company,
+            customer_name: activity.customer_name,
+            description: activity.description,
+            date: activity.date
+         })
       })
+      // eslint-disable-next-line eqeqeq
+      // const foundActivity = activities.find(activity => activity.id == activityId)
+      // this.setState({
+      //    id: foundActivity.id,
+      //    summary: foundActivity.summary,
+      //    company: foundActivity.company,
+      //    customer_name: foundActivity.customer_name,
+      //    description: foundActivity.description
+      // })
    }
 
    handleChangeSummary = e => {
@@ -65,10 +77,6 @@ class EditActivity extends Component {
       }
       
       editActivity(updatedActivity)
-      // summary.value = ''
-      // company.value = ''
-      // customer_name.value = ''
-      // description.value = ''
       this.props.history.push('/activity')
    }
 
