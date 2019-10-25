@@ -27,6 +27,18 @@ const ActivityApiService = {
          : res.json()
       )
 
+   },
+   editActivity(activityId, updatedActivity) {
+      return fetch(`${config.API_ENDPOINT}/activities/${activityId}`, {
+         method: 'PATCH',
+         body: JSON.stringify(updatedActivity)
+      })
+      .then(res => 
+         (!res.ok)
+         ? res.json().then(e => Promise.reject(e))
+         : res.json()
+      )
+
    }
 }
 

@@ -77,8 +77,19 @@ class EditActivity extends Component {
          date: format(new Date(), 'MM/dd/yyyy')
       }
       
-      editActivity(updatedActivity)
-      this.props.history.push('/activity')
+      ActivityApiService.editActivity(activityId, updatedActivity)
+      .then(() => {
+         this.setState({
+            summary: '',
+            company: '',
+            customer_name: '',
+            description: '',
+            date: '',
+         })
+         editActivity(updatedActivity)
+         this.props.history.push('/activity')
+      })
+      .catch(error => this.setState({ error: error }))
    }
 
    handleCancel = () => {
