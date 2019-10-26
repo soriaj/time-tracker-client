@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
 import Landing from '../Landing/Landing'
 import Register from '../Register/Register'
-import Login from '../Login/Login'
+// import Login from '../Login/Login'
 import NotFound from '../NotFound/NotFound'
 import ActivityListItem from '../ActivityListItem/ActivityListItem'
 import AddActivity from '../AddActivity/AddActivity';
@@ -15,6 +15,7 @@ import ActivityContext from '../../ActivityContext'
 // import config from '../../config'
 import ActivityApiService from '../../services/activity-api-service'
 import './App.css'
+import LoginPage from '../../routes/LoginPage';
 
 
 class App extends Component {
@@ -84,7 +85,7 @@ class App extends Component {
             
             {/* PUBLIC ROUTES */}
             <Route path='/register' component={Register} />
-            <Route path='/login' component={Login} />
+            <Route path='/login' component={LoginPage} />
 
             {/* Protected Route */}
             <Route exact path='/activity' component={ActivityListItem} />
