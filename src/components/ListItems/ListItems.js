@@ -31,7 +31,8 @@ class ListItems extends Component {
                   <div className="ListItem-status">
                      <p>{this.props.description.slice(0, 50)}{'...'}</p>
                   </div>
-                  <ControlBar 
+                  <ControlBar
+                     key={this.props.id} 
                      id={this.props.id}
                      history={this.props.history}
                   />

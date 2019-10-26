@@ -34,7 +34,8 @@ class Activity extends Component {
             <div className="filterable-list">
                {activities.filter(activity => activity.company.toLowerCase().includes(searchTerm.toLowerCase()))
                .map(items => 
-                  <ListItems key={items.id} 
+                  <ListItems 
+                     key={items.id} 
                      id={items.id}
                      company={items.company}
                      title={items.summary}

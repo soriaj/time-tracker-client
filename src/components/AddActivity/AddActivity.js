@@ -18,12 +18,13 @@ class AddActivity extends Component {
       const { summary, company, customer_name, description } = e.target
       const { addActivity } = this.context
       const newActivity = {
-         id: uuid(),
+         // id: uuid(),
          summary: summary.value,
          company: company.value,
          customer_name: customer_name.value,
          description: description.value,
-         date: format(new Date(), 'MM/dd/yyyy')
+         // date: format(new Date(), 'MM/dd/yyyy'),   
+         author_id: 1
       }
       
       this.setState({ error: null })
