@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 import './Login.css'
 
 class Login extends Component {
+   static defaultProps = {
+      onLoginSuccess: () => {}
+   }
+   
+   state = { error: null }
+
+   handleSumbitBasicAuth = e => {
+      e.preventDefault()
+      const { user_name, password } = e.target
+
+      user_name.value = ''
+      password.value = ''
+      this.props.onLoginSuccess()
+   }
    handleOnSubmit = ev => {
       ev.preventDefault()
       const { user_name, password } = ev.target
