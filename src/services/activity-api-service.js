@@ -1,19 +1,26 @@
 import config from '../config'
+import TokenService from '../services/token-service'
+
 
 const ActivityApiService = {
    getActivities() {
-      return fetch(`${config.API_ENDPOINT}/activities`)
-         .then(res =>
-            (!res.ok)
-               ? res.json().then(e => Promise.reject(e))
-               : res.json()
-         )
+      return fetch(`${config.API_ENDPOINT}/activities`, {
+         headers: {
+            'authorization': `basic ${TokenService.getAuthToken()}`,
+         }
+      })
+      .then(res =>
+         (!res.ok)
+            ? res.json().then(e => Promise.reject(e))
+            : res.json()
+      )
    },
    getActivity(activityId) {
       return fetch(`${config.API_ENDPOINT}/activities/${activityId}`, {
          method: 'GET',
          headers: {
             'content-type': 'application/json',
+            'authorization': `basic ${TokenService.getAuthToken()}`,
          }
       })
       .then(res => 
@@ -27,6 +34,7 @@ const ActivityApiService = {
          method: 'DELETE',
          headers: {
             'content-type': 'application/json',
+            'authorization': `basic ${TokenService.getAuthToken()}`,
          }  
       })
       .then(res => {
@@ -42,6 +50,7 @@ const ActivityApiService = {
          body: JSON.stringify(updatedActivity),
          headers: {
             'content-type': 'application/json',
+            'authorization': `basic ${TokenService.getAuthToken()}`,
          }
       })
       .then(res => {
@@ -56,6 +65,7 @@ const ActivityApiService = {
          body: JSON.stringify(newActivity),
          headers: {
             'content-type': 'application/json',
+            'authorization': `basic ${TokenService.getAuthToken()}`,
          }
       })
       .then(res => 
