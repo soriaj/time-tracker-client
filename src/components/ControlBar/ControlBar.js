@@ -11,10 +11,9 @@ class ControlBar extends Component {
    handleDeleteActivity = e => {
       e.stopPropagation()
       const activityId = this.props.id
-      const { deleteActivity } = this.context
       ActivityApiService.deleteActivity(activityId)
          .then(() => {
-            deleteActivity(activityId)
+            this.context.deleteActivity(activityId)
             this.props.history.push('/activity')
          })
          .catch(error => console.log(error))
@@ -26,7 +25,6 @@ class ControlBar extends Component {
    }
 
    render() {
-      // console.log(this.props)
       return (
          <div className="ControlBar">
             <div className="ControlBar-btn">

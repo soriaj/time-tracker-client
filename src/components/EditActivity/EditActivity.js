@@ -65,7 +65,6 @@ class EditActivity extends Component {
    handleEditActivity = e => {
       e.preventDefault()
       const { activityId } = this.props.match.params
-      console.log(activityId)
       const { summary, company, customer_name, description } = this.state
       const updatedActivity = {
          summary,
@@ -86,7 +85,7 @@ class EditActivity extends Component {
                date: '',
             })
             this.context.editActivity(updatedActivity)
-            this.props.history.push(`/activity`)
+            this.props.history.push(`/activity/${activityId}`)
          })
          .catch(error => this.setState({ error: error }))
    }

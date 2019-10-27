@@ -11,6 +11,7 @@ class ListItems extends Component {
       e.stopPropagation()
       this.props.history.push(`/activity/${this.props.id}`)
    }
+
    render() {  
       // console.log(this.props)
       const formattedDate = format(new Date(this.props.date), 'MM/dd/yyy')

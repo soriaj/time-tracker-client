@@ -3,7 +3,7 @@ import { format } from 'date-fns'
 import './AddActivity.css'
 import ActivityContext from '../../ActivityContext'
 import ActivityApiService from '../../services/activity-api-service'
-import uuid from 'uuidv4'
+// import uuid from 'uuidv4'
 
 class AddActivity extends Component {
    static defaultProps = {
