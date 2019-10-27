@@ -34,7 +34,7 @@ class AddActivity extends Component {
             company.value = ''
             customer_name.value = ''
             description.value = ''
-            addActivity(newActivity)
+            addActivity(data)
             this.props.history.push('/activity')
          })
          .catch(error => this.setState({ error }))

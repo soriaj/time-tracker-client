@@ -64,10 +64,10 @@ class EditActivity extends Component {
 
    handleEditActivity = e => {
       e.preventDefault()
-      const activityId = this.props.match.params.id
-      const { id, summary, company, customer_name, description } = this.state
+      const { activityId } = this.props.match.params
+      console.log(activityId)
+      const { summary, company, customer_name, description } = this.state
       const updatedActivity = {
-         id,
          summary,
          company,
          customer_name,
@@ -77,15 +77,6 @@ class EditActivity extends Component {
       // const { editActivity } = this.context
 
       ActivityApiService.editActivity(activityId, updatedActivity)
-      // fetch(`${config.API_ENDPOINT}/activities/${activityId}`, {
-      //    method: 'PATCH',
-      //    body: JSON.stringify(updatedActivity)
-      // })
-      // .then(res => {
-      //    (!res.ok)
-      //       ? res.json().then(e => Promise.reject(e))
-      //       : res.json()
-      // })
          .then(() => {
             this.setState({
                summary: '',
@@ -95,7 +86,7 @@ class EditActivity extends Component {
                date: '',
             })
             this.context.editActivity(updatedActivity)
-            this.props.history.push(`/activity/`)
+            this.props.history.push(`/activity`)
          })
          .catch(error => this.setState({ error: error }))
    }

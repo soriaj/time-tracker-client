@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ActivityContext from '../../ActivityContext'
 import ActivityApiService from '../../services/activity-api-service'
+import { format } from 'date-fns'
 
 class ViewActivity extends Component {
    state = {
@@ -46,6 +47,7 @@ class ViewActivity extends Component {
 
    renderActivity() {
       const { id, summary, company, customer_name, description, date } = this.state
+
       return <>
          <div className="registration">
             <div className="registration-form">

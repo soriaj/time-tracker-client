@@ -39,7 +39,7 @@ class App extends Component {
 
   addActivity = activity => {
     this.setState({
-       activities: [...this.state.activities, activity]
+      activities: [...this.state.activities, activity]
     })
   }
 
@@ -50,17 +50,15 @@ class App extends Component {
       this.setState({
         activities: newActivities
       })
-    }, 200)
+    }, 300)
   }
 
   editActivity = updatedActivity => {
-    setTimeout(() => {
-      this.setState({
-        activities: this.state.activities.map(activity => 
-          (activity.id !== updatedActivity.id) ? activity : updatedActivity
-        )
-      })
-    }, 200)
+    this.setState({
+      activities: this.state.activities.map(activity => 
+        (activity.id !== updatedActivity.id) ? activity : updatedActivity
+      )
+    })
   }
 
   render() {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartLine } from '@fortawesome/free-solid-svg-icons'
+import { format } from 'date-fns'
 import ControlBar from '../ControlBar/ControlBar'
 import './ListItems.css'
 
@@ -12,6 +13,7 @@ class ListItems extends Component {
    }
    render() {  
       // console.log(this.props)
+      const formattedDate = format(new Date(this.props.date), 'MM/dd/yyy')
       return (
          <>
          <div className="ListItem">
@@ -25,7 +27,8 @@ class ListItems extends Component {
                   <div className="ListItem-title">Company: {this.props.company}
                      <p className="ListItem-summary">Summary: {this.props.title}</p>
                   </div>
-                  <div className="ListItem-date">Created: {this.props.date}</div>
+                  {/* <div className="ListItem-date">Created: {this.props.date}</div> */}
+                  <div className="ListItem-date">Created: {formattedDate}</div>
                </div>
                <div className="ListItem-actions">
                   <div className="ListItem-status">
