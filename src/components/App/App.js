@@ -81,7 +81,7 @@ class App extends Component {
           <Header />
         </header>
         <main className='App__main'>
-          {this.state.error && <p className='red'>There was an error! Oh no!</p>}
+          {/* {this.state.error && <p className='red'>There was an error! Oh no!</p>} */}
           
           <Switch>
             <Route exact path='/' component={Landing} />
