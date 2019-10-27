@@ -85,7 +85,7 @@ class EditActivity extends Component {
                date: '',
             })
             this.context.editActivity(updatedActivity)
-            this.props.history.push(`/activity/${activityId}`)
+            this.props.history.push(`/activity`)
          })
          .catch(error => this.setState({ error: error }))
    }
