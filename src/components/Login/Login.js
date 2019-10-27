@@ -9,7 +9,7 @@ class Login extends Component {
    
    state = { error: null }
 
-   handleOnSubmit = e => {
+   handleSubmitBasicAuth = e => {
       e.preventDefault()
       const { user_name, password } = e.target
       TokenService.saveAuthToken(TokenService.makeBasicAuthToken(user_name.value, password.value))
@@ -23,8 +23,7 @@ class Login extends Component {
       // console.log(this.props)
       const { error } = this.state
       return (         
-         // <form onSubmit={this.handleSubmitBasicAuth} >
-         <form onSubmit={this.handleOnSubmit} >
+         <form onSubmit={this.handleSubmitBasicAuth} >
             <div role='alert'>
                {error && <p className='red'>{error}</p>}
             </div>
