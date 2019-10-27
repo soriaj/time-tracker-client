@@ -50,7 +50,7 @@ class App extends Component {
       this.setState({
         activities: newActivities
       })
-    }, 300)
+    }, 200)
   }
 
   editActivity = updatedActivity => {

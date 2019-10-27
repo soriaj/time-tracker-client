@@ -72,7 +72,6 @@ class EditActivity extends Component {
          customer_name,
          description,
       }
-      // const { editActivity } = this.context
 
       ActivityApiService.editActivity(activityId, updatedActivity)
          .then(() => {
@@ -84,7 +83,7 @@ class EditActivity extends Component {
                date: '',
             })
             this.context.editActivity(updatedActivity)
-            this.props.history.push(`/activity`)
+            this.props.history.push(`/activity/${activityId}`)
          })
          .catch(error => this.setState({ error: error }))
    }
@@ -94,7 +93,6 @@ class EditActivity extends Component {
    }
 
    render() {
-      // console.log(this.state)
       const { summary, company, customer_name, description, date } = this.state
       return (
          <div className="registration">

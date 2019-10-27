@@ -30,19 +30,6 @@ class ViewActivity extends Component {
             date: format(new Date(activity.date), 'MM/dd/yyy')
          })
       })
-      // const { activities } = this.context
-      // // eslint-disable-next-line eqeqeq
-      // const foundActivity = activities.find(activity => activity.id == activityId)
-      // setTimeout(() => {
-      //    this.setState({
-      //       id: foundActivity.id,
-      //       summary: foundActivity.summary,
-      //       company: foundActivity.company,
-      //       customer_name: foundActivity.customer_name,
-      //       description: foundActivity.description,
-      //       date: foundActivity.date
-      //    })
-      // })
    }
 
    renderActivity() {
