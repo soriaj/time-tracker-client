@@ -85,17 +85,14 @@ class App extends Component {
             <Route exact path='/' component={Landing} />
             
             {/* PUBLIC ROUTES */}
-            <Route path='/register' component={Register} />
-            {/* <PublicOnlyRoute path='/register' component={Register} /> */}
-            <Route path='/login' component={LoginPage} />
-            {/* <PublicOnlyRoute path='/login' component={LoginPage} /> */}
+            <PublicOnlyRoute path='/register' component={Register} />
+            <PublicOnlyRoute path='/login' component={LoginPage} />
 
             {/* Protected Route */}
-            <Route exact path='/activity' component={ActivityListItem} />
-            {/* <PrivateRoute exact path='/activity' component={ActivityListItem} /> */}
-            <Route exact path='/activity/:activityId' component={ViewActivity} />
-            <Route path='/edit/:activityId' component={EditActivity} />
-            <Route path='/add-activity' component={AddActivity} />
+            <PrivateRoute exact path='/activity' component={ActivityListItem} />
+            <PrivateRoute exact path='/activity/:activityId' component={ViewActivity} />
+            <PrivateRoute path='/edit/:activityId' component={EditActivity} />
+            <PrivateRoute path='/add-activity' component={AddActivity} />
             
             {/* NOT FOUND ROUTE */}
             <Route component={NotFound} />
