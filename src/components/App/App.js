@@ -34,23 +34,6 @@ class App extends Component {
     this.setState({ activities: activityList })
   }
 
-  componentDidMount() {
-    ActivityApiService.getActivities()
-      .then(activities => {
-        this.setActivityList(activities)
-      })
-      .catch(error => this.setState({ error }))
-  }
-  // componentDidMount(){
-  //   ActivityApiService.getActivities()
-  //   .then(activities => {
-  //     this.setState({
-  //       activities: activities
-  //     })
-  //   })
-  //   .catch(error => this.setState({ error }))
-  // }
-
   addActivity = activity => {
     this.setState({
       activities: [...this.state.activities, activity]
@@ -73,6 +56,14 @@ class App extends Component {
         (activity.id !== updatedActivity.id) ? activity : updatedActivity
       )
     })
+  }
+
+  componentDidMount() {
+    ActivityApiService.getActivities()
+      .then(activities => {
+        this.setActivityList(activities)
+      })
+      .catch(error => this.setState({ error }))
   }
 
   render() {
