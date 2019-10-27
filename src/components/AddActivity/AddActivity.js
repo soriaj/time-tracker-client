@@ -45,11 +45,14 @@ class AddActivity extends Component {
    }
 
    render() {
+      const currentDate = format(new Date(), 'MM/dd/yyy')
+      console.log(currentDate)
       return (
          <div className="registration">
             <form onSubmit={this.handleAddActivity} >
                <div className="registration-form">
                   <h2>{`Date Modified: ${format(new Date(), 'MM/dd/yyyy')}`} </h2>
+                  {/* <h2>{`Date Modified: ${format(currentUTCDate, 'MM/dd/yyyy')}`} </h2> */}
                   <hr />
                   <label htmlFor="summary"><b>Activity Summary</b></label>
                   <input 

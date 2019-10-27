@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ActivityContext from '../../ActivityContext'
 import ActivityApiService from '../../services/activity-api-service'
-// import { format } from 'date-fns'
+import { format } from 'date-fns'
 
 class ViewActivity extends Component {
    state = {
@@ -27,7 +27,7 @@ class ViewActivity extends Component {
             company: activity.company,
             customer_name: activity.customer_name,
             description: activity.description,
-            date: activity.date
+            date: format(new Date(activity.date), 'MM/dd/yyy')
          })
       })
       // const { activities } = this.context

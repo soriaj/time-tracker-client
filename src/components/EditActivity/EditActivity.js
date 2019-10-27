@@ -31,7 +31,7 @@ class EditActivity extends Component {
                company: activity.company,
                customer_name: activity.customer_name,
                description: activity.description,
-               date: activity.date
+               date: format(new Date(activity.date), 'MM/dd/yyy')
             })
             // .catch(error => this.setState({ error: error }))
       })
@@ -71,7 +71,6 @@ class EditActivity extends Component {
          company,
          customer_name,
          description,
-         date: format(new Date(), 'MM/dd/yyyy')
       }
       // const { editActivity } = this.context
 
@@ -96,12 +95,12 @@ class EditActivity extends Component {
 
    render() {
       // console.log(this.state)
-      const { summary, company, customer_name, description } = this.state
+      const { summary, company, customer_name, description, date } = this.state
       return (
          <div className="registration">
             <form onSubmit={this.handleEditActivity} >
                <div className="registration-form">
-                  <h2>{`Date Modified: ${format(new Date(), 'MM/dd/yyyy')}`} </h2>
+                  <h2>{`Date Modified: ${date}`}</h2>
                   <hr />
                   <input
                      type='hidden'
