@@ -14,8 +14,11 @@ import ActivityContext from '../../ActivityContext'
 
 // import config from '../../config'
 import ActivityApiService from '../../services/activity-api-service'
-import './App.css'
 import LoginPage from '../../routes/LoginPage';
+import PublicOnlyRoute from '../../Utils/PublicOnlyRoute'
+import PrivateRoute from '../../Utils/PrivateRoute'
+import './App.css'
+
 
 
 class App extends Component {
@@ -83,10 +86,13 @@ class App extends Component {
             
             {/* PUBLIC ROUTES */}
             <Route path='/register' component={Register} />
+            {/* <PublicOnlyRoute path='/register' component={Register} /> */}
             <Route path='/login' component={LoginPage} />
+            {/* <PublicOnlyRoute path='/login' component={LoginPage} /> */}
 
             {/* Protected Route */}
             <Route exact path='/activity' component={ActivityListItem} />
+            {/* <PrivateRoute exact path='/activity' component={ActivityListItem} /> */}
             <Route exact path='/activity/:activityId' component={ViewActivity} />
             <Route path='/edit/:activityId' component={EditActivity} />
             <Route path='/add-activity' component={AddActivity} />
