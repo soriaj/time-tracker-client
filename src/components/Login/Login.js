@@ -9,32 +9,22 @@ class Login extends Component {
    
    state = { error: null }
 
-   handleSumbitBasicAuth = e => {
+   handleOnSubmit = e => {
       e.preventDefault()
       const { user_name, password } = e.target
-
       TokenService.saveAuthToken(TokenService.makeBasicAuthToken(user_name.value, password.value))
-
+  
       user_name.value = ''
       password.value = ''
       this.props.onLoginSuccess()
    }
-   handleOnSubmit = ev => {
-      ev.preventDefault()
-      const { user_name, password } = ev.target
-      // const credentials = {
-      //    user_name: user_name.value,
-      //    password: password.value,
-      // }
-      user_name.value = ''
-      password.value = ''
-      this.props.history.push('/activity')
-   }
 
    render() {
+      // console.log(this.props)
       const { error } = this.state
       return (         
-         <form onSubmit={this.handleSubmitBasicAuth} >
+         // <form onSubmit={this.handleSubmitBasicAuth} >
+         <form onSubmit={this.handleOnSubmit} >
             <div role='alert'>
                {error && <p className='red'>{error}</p>}
             </div>
