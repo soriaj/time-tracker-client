@@ -5,6 +5,7 @@ const ActivityContext = React.createContext({
    addActivity: () => {},
    deleteActivity: () => {},
    editActivity: () => {},
+   setActivityList: () => {},
 });
 
 export default ActivityContext;

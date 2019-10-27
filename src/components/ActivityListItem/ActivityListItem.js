@@ -9,8 +9,14 @@ class Activity extends Component {
    static contextType = ActivityContext
 
    state = {
-      searchTerm: '', 
-      activities: []
+      searchTerm: '',
+      error: null 
+   }
+   
+   componentDidMount(){
+      ActivityApiService.getActivities()
+         .then(this.context.setActivityList)
+         .catch(error => this.setState({ error }))
    }
 
    updateSearchTerm = term => {

@@ -30,15 +30,26 @@ class App extends Component {
 
   static contextType = ActivityContext
 
-  componentDidMount(){
-    ActivityApiService.getActivities()
-    .then(activities => {
-      this.setState({
-        activities: activities
-      })
-    })
-    .catch(error => this.setState({ error }))
+  setActivityList = activityList => {
+    this.setState({ activities: activityList })
   }
+
+  componentDidMount() {
+    ActivityApiService.getActivities()
+      .then(activities => {
+        this.setActivityList(activities)
+      })
+      .catch(error => this.setState({ error }))
+  }
+  // componentDidMount(){
+  //   ActivityApiService.getActivities()
+  //   .then(activities => {
+  //     this.setState({
+  //       activities: activities
+  //     })
+  //   })
+  //   .catch(error => this.setState({ error }))
+  // }
 
   addActivity = activity => {
     this.setState({
@@ -70,6 +81,7 @@ class App extends Component {
       addActivity: this.addActivity,
       deleteActivity: this.deleteActivity,
       editActivity: this.editActivity,
+      setActivityList: this.setActivityList,
     }
     return (
       <div className='App'>
