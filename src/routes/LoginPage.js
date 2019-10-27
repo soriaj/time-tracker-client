@@ -11,12 +11,11 @@ class LoginPage extends Component {
   
    handleLoginSuccess = () => {
       const { location, history } = this.props
-      // const destination = (location.state || {}).from || '/activity'
-      // history.push(destination)
-      history.push('/activity')
+      const destination = (location.state || {}).from || '/activity'
+      history.push(destination)
    }
    render() {
-      console.log(this.props)
+      // console.log(this.props)
       return (
          <div className="login">
             <Login onLoginSuccess={this.handleLoginSuccess}/>

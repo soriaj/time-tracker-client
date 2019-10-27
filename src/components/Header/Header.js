@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserClock, faBars } from '@fortawesome/free-solid-svg-icons'
-// import TokenService from '../../services/token-service'
+import TokenService from '../../services/token-service'
 import './Header.css'
 
 class Header extends Component {
@@ -12,7 +12,8 @@ class Header extends Component {
    }
 
    handleLogoutClick =() => {
-      this.props.history.push('/login')
+      TokenService.clearAuthToken()
+      // this.props.history.push('/login')
    }
 
    navBarToggle = () => {
@@ -53,8 +54,7 @@ class Header extends Component {
    }
 
    render() {
-      // const collapsed = this.state.collapsed
-      // console.log(collapsed)
+      console.log(this.props)
       return (
          <>
          <nav role='navigation' className="navbar">
@@ -72,7 +72,7 @@ class Header extends Component {
                Time Tracker
             </div>
             {/* </NavLink> */}
-            {true
+            {TokenService.hasAuthToken() 
                ? this.renderLogoutLink()
                : this.renderLoginLink()
             }

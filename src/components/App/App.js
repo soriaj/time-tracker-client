@@ -75,30 +75,29 @@ class App extends Component {
       <div className='App'>
         <ActivityContext.Provider value={contextValue}>
         <header>
-          <Header 
-            collapsed={this.state.collapsed}
-            navBarToggle={this.navBarToggle}/>
+          <Header />
         </header>
         <main className='App__main'>
           {this.state.error && <p className='red'>There was an error! Oh no!</p>}
+          
           <Switch>
             <Route exact path='/' component={Landing} />
             
             {/* PUBLIC ROUTES */}
             <PublicOnlyRoute path='/register' component={Register} />
             <PublicOnlyRoute path='/login' component={LoginPage} />
-
+            
             {/* Protected Route */}
             <PrivateRoute exact path='/activity' component={ActivityListItem} />
-            <PrivateRoute exact path='/activity/:activityId' component={ViewActivity} />
+            <PrivateRoute path='/activity/:activityId' component={ViewActivity} />
             <PrivateRoute path='/edit/:activityId' component={EditActivity} />
             <PrivateRoute path='/add-activity' component={AddActivity} />
-            
+             
             {/* NOT FOUND ROUTE */}
             <Route component={NotFound} />
           </Switch>
         </main>
-        </ActivityContext.Provider>
+        </ActivityContext.Provider> 
       </div>
     )
   }

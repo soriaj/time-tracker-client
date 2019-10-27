@@ -33,17 +33,8 @@ class EditActivity extends Component {
                description: activity.description,
                date: format(new Date(activity.date), 'MM/dd/yyy')
             })
-            // .catch(error => this.setState({ error: error }))
-      })
-      // eslint-disable-next-line eqeqeq
-      // const foundActivity = activities.find(activity => activity.id == activityId)
-      // this.setState({
-      //    id: foundActivity.id,
-      //    summary: foundActivity.summary,
-      //    company: foundActivity.company,
-      //    customer_name: foundActivity.customer_name,
-      //    description: foundActivity.description
-      // })
+         })
+         .catch(error => this.setState({ error: error }))
    }
 
    handleChangeSummary = e => {
