@@ -6,7 +6,9 @@ const ActivityApiService = {
    getActivities() {
       return fetch(`${config.API_ENDPOINT}/activities`, {
          headers: {
-            'authorization': `basic ${TokenService.getAuthToken()}`,
+            // 'authorization': `basic ${TokenService.getAuthToken()}`,
+            'authorization': `bearer ${TokenService.getAuthToken()}`,
+
          }
       })
       .then(res =>
@@ -20,7 +22,8 @@ const ActivityApiService = {
          method: 'GET',
          headers: {
             'content-type': 'application/json',
-            'authorization': `basic ${TokenService.getAuthToken()}`,
+            // 'authorization': `basic ${TokenService.getAuthToken()}`,
+            'authorization': `bearer ${TokenService.getAuthToken()}`,
          }
       })
       .then(res => 
@@ -34,7 +37,8 @@ const ActivityApiService = {
          method: 'DELETE',
          headers: {
             'content-type': 'application/json',
-            'authorization': `basic ${TokenService.getAuthToken()}`,
+            // 'authorization': `basic ${TokenService.getAuthToken()}`,
+            'authorization': `bearer ${TokenService.getAuthToken()}`,
          }  
       })
       .then(res => {
@@ -50,7 +54,8 @@ const ActivityApiService = {
          body: JSON.stringify(updatedActivity),
          headers: {
             'content-type': 'application/json',
-            'authorization': `basic ${TokenService.getAuthToken()}`,
+            // 'authorization': `basic ${TokenService.getAuthToken()}`,
+            'authorization': `bearer ${TokenService.getAuthToken()}`,
          }
       })
       .then(res => {
@@ -65,7 +70,8 @@ const ActivityApiService = {
          body: JSON.stringify(newActivity),
          headers: {
             'content-type': 'application/json',
-            'authorization': `basic ${TokenService.getAuthToken()}`,
+            // 'authorization': `basic ${TokenService.getAuthToken()}`,
+            'authorization': `bearer ${TokenService.getAuthToken()}`,
          }
       })
       .then(res => 
