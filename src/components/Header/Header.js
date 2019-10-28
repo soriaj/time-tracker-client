@@ -63,7 +63,6 @@ class Header extends Component {
                </FontAwesomeIcon>
                Time Tracker
             </div>
-            {/* </NavLink> */}
             {TokenService.hasAuthToken() 
                ? this.renderLogoutLink()
                : this.renderLoginLink()

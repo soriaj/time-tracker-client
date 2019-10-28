@@ -37,8 +37,7 @@ class RegisterForm extends Component {
 
    handleSubmit = e => {
       e.preventDefault()
-      // const { full_name, email, user_name, password, password_repeat } = e.target
-      const { full_name, user_name, password, password_repeat } = e.target
+      const { full_name, user_name, password } = e.target
       this.setState({ error: null })
       
       AuthApiService.postUser({
@@ -99,17 +98,6 @@ class RegisterForm extends Component {
                      // onChange={this.handleChangePassword}
                      required 
                   />
-               
-                  {/* <label htmlFor="password_repeat"><b>Repeat Password</b></label>
-                  <input 
-                     type="password" 
-                     placeholder="Repeat Password" 
-                     name="password_repeat" 
-                     className="textarea"
-                     // value={this.state.checkPassword}
-                     // onChange={this.handleCheckPassword}
-                     required 
-                  /> */}
                   <hr />
                
                   <button type="submit" className="register-btn">Submit</button>
