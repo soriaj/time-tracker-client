@@ -25,3 +25,4 @@ yarn-error.log*
 *.log
 *.sh
 /old-manifest-ico/
+/screenshots
