@@ -24,7 +24,7 @@ class AddActivity extends Component {
          customer_name: customer_name.value,
          description: description.value,
          // date: format(new Date(), 'MM/dd/yyyy'),   
-         author_id: 1
+         // author_id: 1
       }
       
       this.setState({ error: null })
