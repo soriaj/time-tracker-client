@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
 import Landing from '../Landing/Landing'
-import Register from '../Register/Register'
+import RegisterPage from '../../routes/RegisterPage'
 // import Login from '../Login/Login'
 import NotFound from '../NotFound/NotFound'
 import ActivityListItem from '../ActivityListItem/ActivityListItem'
@@ -87,7 +87,7 @@ class App extends Component {
             <Route exact path='/' component={Landing} />
             
             {/* PUBLIC ROUTES */}
-            <PublicOnlyRoute path='/register' component={Register} />
+            <PublicOnlyRoute path='/register' component={RegisterPage} />
             <PublicOnlyRoute path='/login' component={LoginPage} />
             
             {/* Protected Route */}
