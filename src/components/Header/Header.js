@@ -9,11 +9,14 @@ class Header extends Component {
    state = {
       active: false,
       collapsed: true,
+      hasToken: TokenService.hasAuthToken()
    }
 
    handleLogoutClick =() => {
       TokenService.clearAuthToken()
-      // this.props.history.push('/login')
+      this.setState({
+         hasToken: TokenService.hasAuthToken()
+      })
    }
 
    navBarToggle = () => {
@@ -54,7 +57,6 @@ class Header extends Component {
    }
 
    render() {
-      // console.log(this.props)
       return (
          <>
          <nav role='navigation' className="navbar">
