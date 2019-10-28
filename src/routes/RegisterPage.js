@@ -14,6 +14,7 @@ export default class RegisterPage extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className='RegisterPage'>
         <RegisterForm

@@ -64,7 +64,7 @@ class App extends Component {
       <div className='App'>
         <ActivityContext.Provider value={contextValue}>
         <header>
-          <Header />
+          <Header history={this.props.history}/>
         </header>
         <main className='App__main'>
           {this.state.error && <p className='red'>There was an error! Oh no!</p>}

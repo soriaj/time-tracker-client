@@ -4,9 +4,7 @@ import SignIn from '../SignIn/SignIn';
 import AuthApiService from '../../services/auth-api-service'
 
 class RegisterForm extends Component {
-   state = { 
-         error: null,
-   }
+   state = { error: null }
 
    static defaultProps = {
       onRegistrationSuccess: () => {}
@@ -52,7 +50,6 @@ class RegisterForm extends Component {
             full_name.value = ''
             user_name.value = ''
             password.value = ''
-            password_repeat.value = ''
             this.props.onRegistrationSuccess()
          })
          .catch(res => this.setState({ error: res.error }))
@@ -64,12 +61,12 @@ class RegisterForm extends Component {
             <form 
                onSubmit={this.handleSubmit}
             >
-               <div role='alert'>
-                  {error && <p className='red'>{error}</p>}
-               </div>
                <div className="registration-form">
                   <h1>Register for free account</h1>
                   <hr />
+                  <div role='alert'>
+                     {error && <p className='red'>{error}</p>}
+                  </div>
                   <label htmlFor="full_name"><b>Full Name</b></label>
                   <input
                      type="text" 
@@ -103,14 +100,16 @@ class RegisterForm extends Component {
                      required 
                   />
                
-                  <label htmlFor="password_repeat"><b>Repeat Password</b></label>
+                  {/* <label htmlFor="password_repeat"><b>Repeat Password</b></label>
                   <input 
                      type="password" 
                      placeholder="Repeat Password" 
                      name="password_repeat" 
                      className="textarea"
+                     // value={this.state.checkPassword}
+                     // onChange={this.handleCheckPassword}
                      required 
-                  />
+                  /> */}
                   <hr />
                
                   <button type="submit" className="register-btn">Submit</button>

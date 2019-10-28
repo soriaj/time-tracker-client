@@ -59,7 +59,7 @@ class Header extends Component {
          <nav role='navigation' className="navbar">
             <Hamburger navBarToggle={this.navBarToggle}/>
             <div className="logo">
-               <FontAwesomeIcon icon={faUserClock} onClick={this.backToActivities} className="fas fa-user-clock">
+               <FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
                </FontAwesomeIcon>
                Time Tracker
             </div>

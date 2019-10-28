@@ -14,7 +14,7 @@ class LandingPage extends Component {
                ? <Redirect
                   to={{
                      pathname: '/activity',
-                     state: { from: componentProps.location }
+                     // state: { from: componentProps.location }
                   }}
                />
                : <Landing {...componentProps} />
