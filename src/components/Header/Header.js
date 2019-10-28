@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserClock, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faUserClock } from '@fortawesome/free-solid-svg-icons'
 import TokenService from '../../services/token-service'
+import Hamburger from '../Hamburger/Hamburger'
 import './Header.css'
 
 class Header extends Component {
    state = {
       active: false,
-      collapsed: true,
       hasToken: TokenService.hasAuthToken()
    }
 
@@ -20,9 +20,6 @@ class Header extends Component {
    }
 
    navBarToggle = () => {
-      this.setState({
-         collapsed: !this.state.collapsed
-      })
       let mainNav = document.getElementById('js-menu');
       mainNav.classList.toggle('active');
    }
@@ -60,16 +57,9 @@ class Header extends Component {
       return (
          <>
          <nav role='navigation' className="navbar">
-            <div className="navbar-toggle"
-               data-toggle="collapse" 
-               id="js-navbar-toggle"
-               // onClick={this.navBarToggle}
-            >
-               <FontAwesomeIcon icon={faBars} onClick={this.navBarToggle} className="fas fa-bars"></FontAwesomeIcon>
-            </div>
-            {/* <NavLink to="/" className="logo"> */}
+            <Hamburger navBarToggle={this.navBarToggle}/>
             <div className="logo">
-               <FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
+               <FontAwesomeIcon icon={faUserClock} onClick={this.backToActivities} className="fas fa-user-clock">
                </FontAwesomeIcon>
                Time Tracker
             </div>

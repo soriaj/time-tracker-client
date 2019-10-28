@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './Landing.css';
 import SignIn from '../SignIn/SignIn';
 

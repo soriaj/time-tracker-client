@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
-import Landing from '../Landing/Landing'
+import LandingPage from '../../routes/LandingPage'
 import RegisterPage from '../../routes/RegisterPage'
-// import Login from '../Login/Login'
 import NotFound from '../NotFound/NotFound'
 import ActivityListItem from '../ActivityListItem/ActivityListItem'
 import AddActivity from '../AddActivity/AddActivity';
@@ -11,15 +10,10 @@ import ViewActivity from '../ViewActivity/ViewActivity'
 import EditActivity from '../EditActivity/EditActivity'
 // import { activities } from '../../../src/activities-data'
 import ActivityContext from '../../ActivityContext'
-
-// import config from '../../config'
-import ActivityApiService from '../../services/activity-api-service'
 import LoginPage from '../../routes/LoginPage';
 import PublicOnlyRoute from '../../Utils/PublicOnlyRoute'
 import PrivateRoute from '../../Utils/PrivateRoute'
 import './App.css'
-
-
 
 class App extends Component {
   state = {
@@ -58,14 +52,6 @@ class App extends Component {
     })
   }
 
-  componentDidMount() {
-    ActivityApiService.getActivities()
-      .then(activities => {
-        this.setActivityList(activities)
-      })
-      .catch(error => this.setState({ error }))
-  }
-
   render() {
     const contextValue = {
       activities: this.state.activities,
@@ -81,10 +67,10 @@ class App extends Component {
           <Header />
         </header>
         <main className='App__main'>
-          {/* {this.state.error && <p className='red'>There was an error! Oh no!</p>} */}
+          {this.state.error && <p className='red'>There was an error! Oh no!</p>}
           
           <Switch>
-            <Route exact path='/' component={Landing} />
+            <Route exact path='/' component={LandingPage} />
             
             {/* PUBLIC ROUTES */}
             <PublicOnlyRoute path='/register' component={RegisterPage} />
