@@ -71,9 +71,6 @@ class RegisterForm extends Component {
                      type="text" 
                      placeholder="Enter Full Name" 
                      name="full_name" 
-                     className="textarea"
-                     // value={this.state.full_name}
-                     // onChange={this.handleChangeFullName}
                      required 
                   />
                   
@@ -83,8 +80,6 @@ class RegisterForm extends Component {
                      placeholder="Enter User Name" 
                      name="user_name" 
                      className="textarea"
-                     // value={this.state.user_name}
-                     // onChange={this.handleChangeUserName}
                      required 
                   />
 
@@ -94,8 +89,6 @@ class RegisterForm extends Component {
                      placeholder="Enter Password" 
                      name="password" 
                      className="textarea" 
-                     // value={this.state.password}
-                     // onChange={this.handleChangePassword}
                      required 
                   />
                   <hr />

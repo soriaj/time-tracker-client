@@ -41,7 +41,6 @@ class Login extends Component {
    }
 
    render() {
-      // console.log(this.props)
       const { error } = this.state
       return (         
          <form onSubmit={this.handleSubmitJwtAuth} >

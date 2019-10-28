@@ -18,8 +18,6 @@ class SearchBox extends Component {
                   value={this.props.searchTerm}
                   onChange={e => this.props.handleUpdate(e.target.value)}
                />
-            
-               {/* <button type="button" onClick={this.handleActivitySubmit} className="add-btn">Add Activity</button> */}
                <NavLink type="button" to="/add-activity" className="add-btn">Add Activity</NavLink>
             </div>
          </form>

@@ -13,7 +13,6 @@ class ListItems extends Component {
    }
 
    render() {  
-      // console.log(this.props)
       const formattedDate = format(new Date(this.props.date), 'MM/dd/yyy')
       return (
          <>
@@ -28,7 +27,6 @@ class ListItems extends Component {
                   <div className="ListItem-title">Company: {this.props.company}
                      <p className="ListItem-summary">Summary: {this.props.title}</p>
                   </div>
-                  {/* <div className="ListItem-date">Created: {this.props.date}</div> */}
                   <div className="ListItem-date">Created: {formattedDate}</div>
                </div>
                <div className="ListItem-actions">

@@ -22,7 +22,6 @@ class EditActivity extends Component {
 
    componentDidMount(){
       const { activityId } = this.props.match.params
-      // const { activities } = this.context
       ActivityApiService.getActivity(activityId)
          .then(activity => {
             this.setState({

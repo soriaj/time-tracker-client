@@ -15,7 +15,6 @@ class LoginPage extends Component {
       history.push(destination)
    }
    render() {
-      // console.log(this.props)
       return (
          <div className="login">
             <Login onLoginSuccess={this.handleLoginSuccess}/>
