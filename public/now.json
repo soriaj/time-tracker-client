@@ -1,7 +1,7 @@
 {
    "version": 2,
-   "alias": "javiersoria-timetracker-app",
-   "name": "timetracker-app",
+   "alias": "javiersoria-timetracker-prod",
+   "name": "prod-timetracker",
    "routes": [
       {
       "src": "^/static/(.*)",
