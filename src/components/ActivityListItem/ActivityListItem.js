@@ -28,7 +28,6 @@ class Activity extends Component {
    render() {
       const { searchTerm } = this.state
       const { activities } = this.context
-      // console.log(this.context)
       return (
          <>
             <div className="activities-list">
