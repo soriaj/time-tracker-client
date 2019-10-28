@@ -4,11 +4,8 @@ import SignIn from '../SignIn/SignIn';
 import AuthApiService from '../../services/auth-api-service'
 
 class RegisterForm extends Component {
-   constructor(props){
-      super(props)
-      this.state = { 
+   state = { 
          error: null,
-      }
    }
 
    static defaultProps = {
@@ -59,19 +56,6 @@ class RegisterForm extends Component {
             this.props.onRegistrationSuccess()
          })
          .catch(res => this.setState({ error: res.error }))
-      // const registerData = {
-      //    full_name: full_name.value,
-      //    email: email.value,
-      //    user_name: user_name.value,
-      //    password: password.value,
-      // }
-      // console.log(dregisterData)
-      full_name.value = ''
-      // email.value = ''
-      user_name.value = ''
-      password.value = ''
-      password_repeat.value = ''
-      this.props.history.push('/login')
    }
    render() {
       const { error } = this.state
@@ -96,17 +80,6 @@ class RegisterForm extends Component {
                      // onChange={this.handleChangeFullName}
                      required 
                   />
-                  
-                  {/* <label htmlFor="email"><b>Email</b></label>
-                  <input 
-                     type="text" 
-                     placeholder="name@domain.com" 
-                     name="email" 
-                     className="textarea" 
-                     // value={this.state.email}
-                     // onChange={this.handleChangeEmail}
-                     required 
-                  /> */}
                   
                   <label htmlFor="user_name"><b>User Name</b></label>
                   <input 
