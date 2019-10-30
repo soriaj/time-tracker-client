@@ -29,7 +29,7 @@ Mobile:
 
 ![registration page](/screenshots/03-Registration-mobile.png "Registration-Page-Mobile")
 
-![activities page](/screemsshots/05-ListActivities-mobile.png "Activities-Page-Mobile")
+![activities page](/screenshots/05-ListActivities-mobile.png "Activities-Page-Mobile")
 
 ## Technologies
 - React
