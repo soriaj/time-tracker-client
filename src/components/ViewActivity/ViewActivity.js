@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ActivityContext from '../../ActivityContext'
 import ActivityApiService from '../../services/activity-api-service'
 import { format } from 'date-fns'
+import Loading from '../Loading/Loading'
 
 class ViewActivity extends Component {
    state = {
@@ -12,6 +13,7 @@ class ViewActivity extends Component {
       description: '',
       date: '',
       error: null,
+      loading: true
    }
 
    static contextType = ActivityContext
@@ -27,7 +29,8 @@ class ViewActivity extends Component {
             company: activity.company,
             customer_name: activity.customer_name,
             description: activity.description,
-            date: format(new Date(activity.date), 'MM/dd/yyy')
+            date: format(new Date(activity.date), 'MM/dd/yyy'),
+            loading: false
          })
       })
    }
@@ -36,7 +39,7 @@ class ViewActivity extends Component {
       const { id, summary, company, customer_name, description, date } = this.state
 
       return <>
-         <div className="registration">
+         {this.state.loading ? <Loading /> : <div className="registration">
             <div className="registration-form">
                <h2>{`Date Modified: ${date}`} </h2>
                <hr />
@@ -66,7 +69,7 @@ class ViewActivity extends Component {
                Back
                </button>
             </div>
-         </div>
+         </div>}
       </>
    }
 

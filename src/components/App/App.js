@@ -19,12 +19,13 @@ class App extends Component {
     error: null,
     activities: [],
     collapsed: false,
+    loading: true
   }
 
   static contextType = ActivityContext
 
   setActivityList = activityList => {
-    this.setState({ activities: activityList })
+    this.setState({ activities: activityList, loading: false })
   }
 
   addActivity = activity => {
@@ -54,6 +55,7 @@ class App extends Component {
   render() {
     const contextValue = {
       activities: this.state.activities,
+      loading: this.state.loading,
       addActivity: this.addActivity,
       deleteActivity: this.deleteActivity,
       editActivity: this.editActivity,

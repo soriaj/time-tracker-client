@@ -4,13 +4,14 @@ import ListItems from '../ListItems/ListItems'
 import './ActivityListItem.css'
 import ActivityContext from '../../ActivityContext'
 import ActivityApiService from '../../services/activity-api-service'
+import Loading from '../Loading/Loading'
 
 class Activity extends Component {
    static contextType = ActivityContext
 
    state = {
       searchTerm: '',
-      error: null 
+      error: null,
    }
    
    componentDidMount(){
@@ -37,7 +38,7 @@ class Activity extends Component {
                />
             </div>
 
-            <div className="filterable-list">
+            {this.context.loading ? <Loading /> : <div className="filterable-list">
                {activities.filter(activity => activity.company.toLowerCase().includes(searchTerm.toLowerCase()))
                .map(items => 
                   <ListItems 
@@ -51,7 +52,7 @@ class Activity extends Component {
                      history={this.props.history}
                   />
                )}
-            </div>
+            </div>}
          </>
       );
    }
