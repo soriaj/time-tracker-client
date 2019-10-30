@@ -8,7 +8,7 @@ import './Header.css'
 
 class Header extends Component {
    state = {
-      active: false,
+      active: true,
       hasToken: TokenService.hasAuthToken()
    }
 
@@ -17,6 +17,7 @@ class Header extends Component {
       this.setState({
          hasToken: TokenService.hasAuthToken()
       })
+      this.navBarToggle()
    }
 
    navBarToggle = () => {
@@ -43,10 +44,10 @@ class Header extends Component {
       return (
          <ul className="main-nav" id="js-menu">
             <li>
-               <Link to='/register' className="nav-links">Sign Up</Link>
+               <Link to='/register' onClick={this.navBarToggle} className="nav-links">Sign Up</Link>
             </li>
             <li>
-               <Link to='/login' className="nav-links">Login</Link>
+               <Link to='/login' onClick={this.navBarToggle} className="nav-links">Login</Link>
             </li>
          </ul>
 
