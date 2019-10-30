@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Time Tracker Client
 
-## Available Scripts
+Frontend client for time-tracker-app. A time and activity tracking application.
 
-In the project directory, you can run:
+## Set up
 
-### `npm start`
+Complete the following steps to setup locally:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone this repository to you local machine `git clone git@github.com:soriaj/time-tracker-server.git <NEW-PROJECT-NAME>`
+2. `cd` into the cloned repository
+3. Install the dependencies `npm install`
+4. Create an `.env` file
+5. [OPTIONAL] edit .env file and add REACT_APP_API_BASE_URL server endpoint
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+Desktop/Laptop: 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![landing screen](https://lh3.googleusercontent.com/IJQilSjFhZyrAs_Vt9tgCTDl8GD65kEyMuEAAB05zxVmF2rN2t23eTVY0hrTkiMx3K66twbo33dOUezROFaCbp-dtBRgdvawuUfX5uqOTQ7wCKiYkc6fL4-75SlJ8V9a4w_SvhFQueI-Sz68J0IOFqbDgZo2YjwuQQ3tx4_U6dY48-Mn682YWYRaVO-v8vaqTWGkSTL3cqUTibAAT9G_4yHdCLJEDALT1eVIxAmDeH1NiWvM7Yn3iba1-KRS4rvO52tayF9iYXMSbfcvP4S_LUZlQFbe3OILXyVrJWfqSz2fX4TO35HBd2o8-1fhKnExY_2vcmO6IILAKSVTLoICLLfQ1jrPMkW3CcfXNbEjP5cz2fPa_G-XqlsDRSxctY3CsJMkDCnCUf8paHAPDWTdB5ejQrKWBDQ8l__vcwvsIaTg7n9gYNgcKjlKtQoTXkXCNPIHITFYyhajYJ5NTlDLoFoY50yzaMVY3RD_F7USLUhtL2A34qcF1VVgIHuH-AJSC3lelF3kkry8FmbM8znPUybXHY-pOFQgJ1I5uG3z3Q9KfMmgNruch7QuY_nY9w0IR6kXIjDoT4hKF8q_C-gJL2_XH_8SS5g6jsY2dVJ4H5wp65n6bF-hF7Sa_r7EcftYIrmepI2_QvCgxTXHlGoaMdi40BQEnZnEegdC106mTvxZmmlW4kb2=w958-h631-no)
 
-### `npm run build`
+![registration screen](https://lh3.googleusercontent.com/nHWyqEO-z6DI6Lxb53BOLWkKGCv_5eaAtqpHWGXMCgFPBh0CgvCNxud8HgmTyw1FWdkV_V0i4v8ttddh80KlhxGy7Abv4_5bmrG4P32ffrAiUNgQ154hlUxuIXFn_TJkW6uzzE0uFwyusQSRwt_gXs7XV51iFetapEbWThG4niIu4TyYWyaPfzuXjNgpGTG3JO07sf8k7in3XFR_1OI_0PZXrRm3pDp4ajoAixaKFr7AjnBsaJMfm_U9KK9q9tDuJQh13WZoZBd3Uog_PclhuWEFwxh0dZK_gPTB3Xufc_ZvYN0cF96lm2gvJxETfw2uBCWDA_y1bHez2lcPIpvi5kYZupliPoK1Xs9_VkRvyae9uppzPppm2Idw6ZeA2Jrum6TuhkwcwSwky58sPE4ShpPYos1XKXUTgN-wQj2aOaIjpnt4suPAmcHZ7AXClKbs7yvGe6aZEq5P1Oe6whOtWXQww5g2MQINaWQ5EB4A-OfWIDEhCRTH0qo1Mrs_RfvO0AbnOUZj7cQ3oguXjmlLwwYlfWSIFCDEw55dAeXF8abiKek7MvAOO9jSXFwZXBv6_0Wxjwk4vbMQl76XtJQ5fex7w5PZmst9TJtEfHtvDSVYHE70T2PiMrvID7D1GyWZXv-w3KdhDxkslNp_ZH1k0XCj1EzM1WqQp9xWxG2t2oksmL3-cvo0=w941-h721-no)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![activities screen](https://lh3.googleusercontent.com/h8uOL8zRrki6MRuCo7f7ZmZljd9Npofg-IjE251Ji2HIRgQQD4rjIiZa18i83_oHND1wGk-810zPL2B9gYPWwOBAyFGxiM6fJU9MlJDVJq1Dwr0_TXN1Ok5qrrMUTgFBfZ0eV8WTDtepHlI3QHX-_XQWqb1J8XqrKNBZ0LLbrZO8zLYNZ1KwqT9GeQhuyEDwEfCtK8rtNNTdlse9nMcK5rQZa-PQUYC0MoRXBdWui6NEQrbMt6TpbERFV1r6G--pW_uOUWiNtLgvHrnAqxCU_zGj6Zgu1LkZNo6Qz-qjfcHAPO4a6yITeOyacweNPOyNxge7j_fGRinmZgYL6C4_F_cZ3LlG7LWvzj6xsL9y33TutNgSyPo-Pk7FTqvxmUA0tot1v4dM4KE4yk6pwvCPItmhn-d8vjOTj-C8ECbAu5zK2nKMyCq4tO0Yc9W9IAiknTk2uYB7yrxbz4cNfr-o1SB96Y8c6u5TufPASAFuvaF88x4aq8eWNMvz_iAdUTbyKq9Ie92LEE-Ac3tjVhoTOf0t3qCTd8uUAoZQWgx-0X1Vs9V979HlsQTGqI9Oozka8wIKwRsNlEv9kuywS6PnSUwPmKXVDZUuh4oZAFEzR70lJPQQf5yUGm26dIO-b8a0D2UrTeB2RssWSRSRKzj8O4KAsARxAZFmyhvlfuqRjUdoWrhuj73h=w958-h728-no)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Mobile:
 
-### `npm run eject`
+![landing screen](https://lh3.googleusercontent.com/nKezDsratreyA0HO1zsS8jnBIZ4NMSeAwYzcWGuX9rIK2W1k8h5C4Q1yLGxFRrjw0Wux48MBwh9PFhBgFKzljpp0O-UniXicQf2-ZUHMRWQULo33ekdrT01Pfc5G2-qiaYQCiU-00fb6CI-a6q-RHEGLCNwuxyVh1YcIu64_uX2DfqF4oO--7AxFms_uWGguXMouZNoIa2eNm6wWJr2bUNKi2GAx-qV16UXg201V4xOhCUdGyScBwFuYNwaRV6znbQ6I5J7biW6lZqmusnhRsf_fEgcSUqYpdZhyGgK88Avku3CiG-y-OxX-Shb_iOBWjqbOcjFR_fbTCnUGDN-mENpVy-LcbxnKf68BTfqmroDSos49yrgD0hMlzDHW7spLxzckPlbef3kYHhL7-NoQft-tA8IWoIWk1Ps62dyJtFbkc6YxZYZg81PdBaYe0IDgk3-L87R_32b6vtxBSd-Pkn1UtH8JQR44MWiB_UC6Bx2UMv3690r4HJPVufgWo_HkTVE8eCRhnwooQh3huFWIKAaP7pV8YE-frKlDFIIxfq1DURyHnigp9_0FBecgH69zvwhgtJbvpoqyXPc46ZpXw-24qdml9elvuGEu2sEEY4kVh0NLo5pUDyPS-kLCmPiaGrxMwIuhI9V_ZPSUNVFF5v6HDbcc1JZLQmmCsWaNfKnLtYlswzzV=w320-h480-no)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![registration page](https://lh3.googleusercontent.com/ztgUzXeOp_l0EFdt0DD5wIBc9h20JH0nqVSurex-8rmRDUQY1fCcU8i0q06ItPKPk4vWuc-amzSDgruKFK3hC4OCYN0lsUGOWrkN4oI_L-4JWAbKwhrRWFnlHFaajgBBSNJ2zga7z3ioNRIE5bi6Lf41Dw8TIOhQ5VW9iWAPzCk_c3i-Eb5PJcLL5bE6s6lQhv0Kr5LdnjaTHWn-4TNEIVpuS3NSkEbPKMA8oSWzey1IpU0b2tUPWd8V9Pqqj_pG42PTIx0hQ8LegQ0olyhT63wP0tFMTAls7VHZaYBgsrgjBOtXcUXlEmHZFB6UTPraf9OKuZ2_Z83QsgGIcO-7qKUzEWfRZsQLssghF509yJ82XsXNDnICDTtANjVJDwBFr5ZEjadSJtHL1WgrcIso0YnTrS6T3fLgd0CKRUALatHixHTi4sOUXKDJtQ07kJGXYLcfhJr15kpBf1-MpArl2v-4rfnwFQELXgdhi_AY6-WqzT7XGAF2dbo_H7IjblvEKF_VIC_hoNk80vyRiwfZn2q14SA9ECkkp4pQpR9gzBy1VVRFc21RvAfwMXmwnEr3QLXOjuMzf2dm3DsyMhEBLO1_HKZ-L2SauHwQz4hF-YJ75-xgV_fjOSVG6m3WgMwXyft2XcVZtTo53zPx2GTVhQSdszigCpN_S-qCkcMgHK4_oV6gTpkF=w320-h764-no)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![activities page](https://lh3.googleusercontent.com/3T8APLaOu9t0W8O05gFOHZNBjqEbajEt2RZgfahPMSgy31_MFIR7QSnbKZeAS15QDd40wwJujH8A74bAJV0UjL32I1hNZa5GnC19_DF8lLpaFc6D2XYJXu2I180gpyLXcpUG1hM3eUonIMCvAa3S-QB-Cx9QvdIeSSmeal0lRrOWCHz0CoWQ1uGdzKTcPSzbKVjeEeJyroVLZamllMixGVq67TynSNbXyWUbcuGQOTo9fwCb6dBCnogVYBSutu7BasA2k7xjpggodgJqc1lmpol8k4GMhzwYnuaVQx_I2mWKnre6XacIK3p4Ulpf0E8eUsB2DvnnaO9MD58QnHtuK6eR1S4WOvHNxn_IqJ4gSALtLxR8yc3pzUb_mi8XBjzhB0Gu5TBCOz026IXd_0J5r7O17790QYjOSJJnnBsUTw07yhHPIj7UnluAtWcCeaYFyZkgGOrM0bG6ynHfwGRtc2Fa3DfLOyeU6UQnnc53uD7EygUtzXic6HuKeUdi1E9qOWyvjaLeC6VBUbIU3lpwjIN4Rb10HUVh6iDfK5Axmh8zciu_xBxmLKvJTirxuXu5ku86miAmjd9fUL2wCGhWLJsbDnPMEk4ZnZKaRkJO8mjTpg3lg2DaO4K8lOY66X1CvYo8VCN35-Z1QaOXllVWtfcm1A5QTdG2b3hRUD6tnH-irMQaMwe6=w320-h773-no)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies
+- React
+- JavaScript
+- HTML5
+- CSS
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Testing 
+- React test
+- Enzyme
 
-## Learn More
+## Live App
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Time Tracker](https://prod-timetracker.javiersoria.now.sh/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Author
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* **Javier Soria**

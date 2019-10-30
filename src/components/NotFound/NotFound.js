@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './NotFound.css';
 
-class Landing extends Component {
+class NotFound extends Component {
    render() {
       return (
          <div className="welcome">
@@ -12,4 +12,4 @@ class Landing extends Component {
    }
 }
 
-export default Landing;
+export default NotFound;

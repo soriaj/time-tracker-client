@@ -1,37 +1,93 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
-import Landing from '../Landing/Landing'
-import Register from '../Register/Register'
-import Login from '../Login/Login'
+import LandingPage from '../../routes/LandingPage'
+import RegisterPage from '../../routes/RegisterPage'
 import NotFound from '../NotFound/NotFound'
-import ActivityListItem from '../Activity/ActivityListItem'
+import ActivityListItem from '../ActivityListItem/ActivityListItem'
 import AddActivity from '../AddActivity/AddActivity';
+import ViewActivity from '../ViewActivity/ViewActivity'
+import EditActivity from '../EditActivity/EditActivity'
+import ActivityContext from '../../ActivityContext'
+import LoginPage from '../../routes/LoginPage';
+import PublicOnlyRoute from '../../Utils/PublicOnlyRoute'
+import PrivateRoute from '../../Utils/PrivateRoute'
 import './App.css'
 
-
 class App extends Component {
-  state = { hasError: false  }
+  state = {
+    error: null,
+    activities: [],
+    collapsed: false,
+    loading: true
+  }
+
+  static contextType = ActivityContext
+
+  setActivityList = activityList => {
+    this.setState({ activities: activityList, loading: false })
+  }
+
+  addActivity = activity => {
+    this.setState({
+      activities: [...this.state.activities, activity]
+    })
+  }
+
+  deleteActivity = activityId => {
+    const currentActivities = this.state.activities
+    const newActivities = currentActivities.filter(activity => activity.id !== activityId)
+    setTimeout(() => {
+      this.setState({
+        activities: newActivities
+      })
+    }, 200)
+  }
+
+  editActivity = updatedActivity => {
+    this.setState({
+      activities: this.state.activities.map(activity => 
+        (activity.id !== updatedActivity.id) ? activity : updatedActivity
+      )
+    })
+  }
 
   render() {
-    console.log(this.props)
+    const contextValue = {
+      activities: this.state.activities,
+      loading: this.state.loading,
+      addActivity: this.addActivity,
+      deleteActivity: this.deleteActivity,
+      editActivity: this.editActivity,
+      setActivityList: this.setActivityList,
+    }
     return (
       <div className='App'>
+        <ActivityContext.Provider value={contextValue}>
         <header>
-          <Header />
+          <Header history={this.props.history}/>
         </header>
         <main className='App__main'>
-          {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
+          {this.state.error && <p className='red'>There was an error! Oh no!</p>}
+          
           <Switch>
-            <Route exact path='/' component={Landing} />
-            <Route path='/register' component={Register} />
-            <Route path='/login' component={Login} />
-            {/* Activities Will Be Protected Route */}
-            <Route path='/activity' component={ActivityListItem} />
-            <Route path='/add-activity' component={AddActivity} />
+            <Route exact path='/' component={LandingPage} />
+            
+            {/* PUBLIC ROUTES */}
+            <PublicOnlyRoute path='/register' component={RegisterPage} />
+            <PublicOnlyRoute path='/login' component={LoginPage} />
+            
+            {/* Protected Route */}
+            <PrivateRoute exact path='/activity' component={ActivityListItem} />
+            <PrivateRoute path='/activity/:activityId' component={ViewActivity} />
+            <PrivateRoute path='/edit/:activityId' component={EditActivity} />
+            <PrivateRoute path='/add-activity' component={AddActivity} />
+             
+            {/* NOT FOUND ROUTE */}
             <Route component={NotFound} />
           </Switch>
         </main>
+        </ActivityContext.Provider> 
       </div>
     )
   }

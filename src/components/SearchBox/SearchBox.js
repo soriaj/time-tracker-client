@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import './SearchListBox.css'
+import './SearchBox.css'
 
-class SearchListBox extends Component {
+class SearchBox extends Component {
    render() {
       return (
          <form>
@@ -18,8 +18,6 @@ class SearchListBox extends Component {
                   value={this.props.searchTerm}
                   onChange={e => this.props.handleUpdate(e.target.value)}
                />
-            
-               {/* <button type="button" onClick={this.handleActivitySubmit} className="add-btn">Add Activity</button> */}
                <NavLink type="button" to="/add-activity" className="add-btn">Add Activity</NavLink>
             </div>
          </form>
@@ -27,4 +25,4 @@ class SearchListBox extends Component {
    }
 }
 
-export default SearchListBox;
+export default SearchBox;

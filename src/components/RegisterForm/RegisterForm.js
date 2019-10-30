@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './Register.css'
+import './RegisterForm.css'
 import SignIn from '../SignIn/SignIn';
+import AuthApiService from '../../services/auth-api-service'
 
-class Register extends Component {
-   constructor(props){
-      super(props)
-      this.state = { 
-         error: null,
-      }
+class RegisterForm extends Component {
+   state = { error: null }
+
+   static defaultProps = {
+      onRegistrationSuccess: () => {}
    }
 
    handleChangeFullName = (event) => {
@@ -37,21 +37,21 @@ class Register extends Component {
 
    handleSubmit = e => {
       e.preventDefault()
-      const { full_name, email, user_name, password, password_repeat } = e.target
-
-      // const registerData = {
-      //    full_name: full_name.value,
-      //    email: email.value,
-      //    user_name: user_name.value,
-      //    password: password.value,
-      // }
-      // console.log(dregisterData)
-      full_name.value = ''
-      email.value = ''
-      user_name.value = ''
-      password.value = ''
-      password_repeat.value = ''
-      this.props.history.push('/login')
+      const { full_name, user_name, password } = e.target
+      this.setState({ error: null })
+      
+      AuthApiService.postUser({
+         full_name: full_name.value,
+         user_name: user_name.value,
+         password: password.value,
+      })
+         .then(user => {
+            full_name.value = ''
+            user_name.value = ''
+            password.value = ''
+            this.props.onRegistrationSuccess()
+         })
+         .catch(res => this.setState({ error: res.error }))
    }
    render() {
       const { error } = this.state
@@ -60,31 +60,17 @@ class Register extends Component {
             <form 
                onSubmit={this.handleSubmit}
             >
-               <div role='alert'>
-                  {error && <p className='red'>{error}</p>}
-               </div>
                <div className="registration-form">
                   <h1>Register for free account</h1>
                   <hr />
+                  <div role='alert'>
+                     {error && <p className='red'>{error}</p>}
+                  </div>
                   <label htmlFor="full_name"><b>Full Name</b></label>
                   <input
                      type="text" 
                      placeholder="Enter Full Name" 
                      name="full_name" 
-                     className="textarea"
-                     // value={this.state.full_name}
-                     // onChange={this.handleChangeFullName}
-                     required 
-                  />
-                  
-                  <label htmlFor="email"><b>Email</b></label>
-                  <input 
-                     type="text" 
-                     placeholder="name@domain.com" 
-                     name="email" 
-                     className="textarea" 
-                     // value={this.state.email}
-                     // onChange={this.handleChangeEmail}
                      required 
                   />
                   
@@ -94,8 +80,6 @@ class Register extends Component {
                      placeholder="Enter User Name" 
                      name="user_name" 
                      className="textarea"
-                     // value={this.state.user_name}
-                     // onChange={this.handleChangeUserName}
                      required 
                   />
 
@@ -105,17 +89,6 @@ class Register extends Component {
                      placeholder="Enter Password" 
                      name="password" 
                      className="textarea" 
-                     // value={this.state.password}
-                     // onChange={this.handleChangePassword}
-                     required 
-                  />
-               
-                  <label htmlFor="password_repeat"><b>Repeat Password</b></label>
-                  <input 
-                     type="password" 
-                     placeholder="Repeat Password" 
-                     name="password_repeat" 
-                     className="textarea"
                      required 
                   />
                   <hr />
@@ -130,4 +103,4 @@ class Register extends Component {
    }
 }
 
-export default Register;
+export default RegisterForm;

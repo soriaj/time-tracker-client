@@ -1,20 +1,26 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserClock, faBars } from '@fortawesome/free-solid-svg-icons'
-// import TokenService from '../../services/token-service'
+import { faUserClock } from '@fortawesome/free-solid-svg-icons'
+import TokenService from '../../services/token-service'
+import Hamburger from '../Hamburger/Hamburger'
 import './Header.css'
 
 class Header extends Component {
    state = {
-      active: false
+      active: true,
+      hasToken: TokenService.hasAuthToken()
    }
 
    handleLogoutClick =() => {
-      this.props.history.push('/login')
+      TokenService.clearAuthToken()
+      this.setState({
+         hasToken: TokenService.hasAuthToken()
+      })
+      this.navBarToggle()
    }
 
-   navBarToggle() {
+   navBarToggle = () => {
       let mainNav = document.getElementById('js-menu');
       mainNav.classList.toggle('active');
    }
@@ -38,10 +44,10 @@ class Header extends Component {
       return (
          <ul className="main-nav" id="js-menu">
             <li>
-               <Link to='/register' className="nav-links">Sign Up</Link>
+               <Link to='/register' onClick={this.navBarToggle} className="nav-links">Sign Up</Link>
             </li>
             <li>
-               <Link to='/login' className="nav-links">Login</Link>
+               <Link to='/login' onClick={this.navBarToggle} className="nav-links">Login</Link>
             </li>
          </ul>
 
@@ -49,27 +55,22 @@ class Header extends Component {
    }
 
    render() {
-      console.log(this.props)
-      return <>
+      return (
+         <>
          <nav role='navigation' className="navbar">
-            <span className="navbar-toggle" 
-               id="js-navbar-toggle"
-               onClick={this.navBarToggle}
-            >
-               <FontAwesomeIcon icon={faBars} className="fas fa-bars"></FontAwesomeIcon>
-            </span>
-            <Link to="/" className="logo">
+            <Hamburger navBarToggle={this.navBarToggle}/>
+            <div className="logo">
                <FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
                </FontAwesomeIcon>
                Time Tracker
-            </Link>
-            {true
+            </div>
+            {TokenService.hasAuthToken() 
                ? this.renderLogoutLink()
                : this.renderLoginLink()
             }
          </nav>
       </>
-
+      )
    }
 }
 

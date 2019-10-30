@@ -1,13 +1,39 @@
 import React, { Component } from 'react'
 import { format } from 'date-fns'
 import './AddActivity.css'
+import ActivityContext from '../../ActivityContext'
+import ActivityApiService from '../../services/activity-api-service'
 
 class AddActivity extends Component {
-   
+   static defaultProps = {
+      addActivity: () => {}
+   }
+   static contextType = ActivityContext
 
-   handleSubmitAddActivity = ev => {
-      ev.preventDefault()
-      alert('You added a activity')
+   state = { error: null }
+
+   handleAddActivity = e => {
+      e.preventDefault()
+      const { summary, company, customer_name, description } = e.target
+      const { addActivity } = this.context
+      const newActivity = {
+         summary: summary.value,
+         company: company.value,
+         customer_name: customer_name.value,
+         description: description.value,
+      }
+      
+      this.setState({ error: null })
+      ActivityApiService.addActivity(newActivity)
+         .then(data => {
+            summary.value = ''
+            company.value = ''
+            customer_name.value = ''
+            description.value = ''
+            addActivity(data)
+            this.props.history.push('/activity')
+         })
+         .catch(error => this.setState({ error }))
    }
 
    handleCancel = () => {
@@ -17,21 +43,27 @@ class AddActivity extends Component {
    render() {
       return (
          <div className="registration">
-            <form onSubmit={this.handleSubmitAddActivity} >
+            <form onSubmit={this.handleAddActivity} >
                <div className="registration-form">
                   <h2>{`Date Modified: ${format(new Date(), 'MM/dd/yyyy')}`} </h2>
                   <hr />
-                  <label htmlFor="title"><b>Activity Title</b></label>
-                  <input type="text" placeholder="Enter Activity Title" name="title" className="textarea" required />
+                  <label htmlFor="summary"><b>Activity Summary</b></label>
+                  <input 
+                     type="text" 
+                     placeholder="Enter Brief Summary" 
+                     name="summary" 
+                     className="textarea" 
+                     required 
+                  />
 
                   <label htmlFor="company"><b>Company Name</b></label>
                   <input type="text" placeholder="Enter company Name" name="company" className="textarea" required />
                   
-                  <label htmlFor="contact"><b>Customer Name</b></label>
-                  <input type="text" placeholder="Full Name" name="contact" className="textarea" required />
+                  <label htmlFor="customer_name"><b>Customer Name</b></label>
+                  <input type="text" placeholder="Full Name" name="customer_name" className="textarea" required />
                   
                   <label htmlFor="description"><b>Description</b></label>
-                  <textarea className="textarea" placeholder="Activity description..."></textarea>
+                  <textarea className="textarea" name="description" placeholder="Activity description..."></textarea>
                   <hr />
 
                   <button type="submit" className="register-btn">Save</button>

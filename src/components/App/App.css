@@ -10,7 +10,11 @@
 }
  
 .App__main {
-   margin-top: 20px;
+   margin-top: 60px;
+}
+
+.red {
+   color: red;
 }
 
 @media screen and (min-width: 1000px) {
@@ -20,14 +24,6 @@
 }
 
 @media screen and (min-width: 768px) {
-   .navbar {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 0;
-      height: 70px;
-      align-items: center;
-   }
-
    .main {
       margin-right: auto;
       margin-left: auto;

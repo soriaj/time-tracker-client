@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
-// import { format } from 'date-fns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartLine } from '@fortawesome/free-solid-svg-icons'
+import { format } from 'date-fns'
 import ControlBar from '../ControlBar/ControlBar'
+import './ListItems.css'
 
 class ListItems extends Component {
+
+   handleViewActivty = e => {
+      e.stopPropagation()
+      this.props.history.push(`/activity/${this.props.id}`)
+   }
+
    render() {  
-      const { searchTerm } = this.props
-      console.log(this.props)
-      // const list = activity.filter(act => act.company_name.includes(searchTerm))
-      //    .map((act, id) => <Item {...act} key={id} />)
+      const formattedDate = format(new Date(this.props.date), 'MM/dd/yyy')
       return (
          <>
          <div className="ListItem">
@@ -18,18 +22,22 @@ class ListItems extends Component {
                   <FontAwesomeIcon icon={faChartLine} className="fas fa-chart-line"></FontAwesomeIcon>
                </div>
             </div>
-            <div className="ListItem-content">
+            <div className="ListItem-content" onClick={e => this.handleViewActivty(e)}>
                <div className="ListItem-heading">
                   <div className="ListItem-title">Company: {this.props.company}
                      <p className="ListItem-summary">Summary: {this.props.title}</p>
                   </div>
-                  <div className="ListItem-size">{this.props.date}</div>
+                  <div className="ListItem-date">Created: {formattedDate}</div>
                </div>
                <div className="ListItem-actions">
                   <div className="ListItem-status">
-                     <p>{this.props.description}</p>
+                     <p>{this.props.description.slice(0, 50)}{'...'}</p>
                   </div>
-                  <ControlBar />
+                  <ControlBar
+                     key={this.props.id} 
+                     id={this.props.id}
+                     history={this.props.history}
+                  />
                </div>
             </div>
          </div>

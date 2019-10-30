@@ -24,4 +24,7 @@ yarn-error.log*
 .env
 *.log
 *.sh
-config.js
+/old-manifest-ico/
+/screenshots
+activities-data.json
+set-react-default.sh
