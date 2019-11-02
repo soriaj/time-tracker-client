@@ -9,7 +9,8 @@ class SearchBox extends Component {
             <div className="registration-form">
                <h1>Activities</h1>
                <hr />
-               <label htmlFor="search"><b>Search By Company</b></label>
+               <label htmlFor="search"><b>Search By Company Name</b></label>
+               <p className="search-filter">Type company name to filter list.</p>
                <input   
                   className="textarea" 
                   type="text" 

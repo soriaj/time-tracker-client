@@ -5,6 +5,10 @@
    justify-content: center;
 }
 
+.search-filter {
+   font-style: italic;
+}
+
 @media screen and (min-width: 768px){
    .add-btn {
       width: 25%;
