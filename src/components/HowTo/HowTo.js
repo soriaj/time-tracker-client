@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom' 
+import AddBtn from '../../images/addBtn.png'
+import AddForm from '../../images/addForm.png'
 import './HowTo.css'
 
 class HowTo extends Component {
@@ -32,8 +34,12 @@ class HowTo extends Component {
                <p>Once you've created an account, login to your account. On the activities page simpliy click on the <b>Add Activity</b> button. 
                   Enter in activity details and click on <b>Save</b> to submit your activity. Once saved, your activity will display on the activities page.</p>
                <div className='screenshots'>
-                  <img className='screenshot-img' src='https://lh3.googleusercontent.com/Cuhq6IfgtD_-xHP51gSvT464jo6j7l1tY0JGQE-Ak9Y7dxQJRtS7sBFzPQEZxRKeaiCku7G9781dEAk6tyhi6qqIpYusYslFKR5KMhQ7WPsWoDyxM1wN_xO6zDG3ZzJleyczWvQQC5fMU7LPwnAZWDTO-iCSeWX532QhyL558r5T6ZHiXfa_jHWaMTTT51L5MtvMzzMacwVaf-mcntGCbye_tkOja_vDeN7ZYUPU9oMgwUgH46gQiLxVTJqcT6wNiybuUq8VuRqWCJAsrTCOQNwW_Z7aWs7pZP1K7yhByjzVvrzzy8ugQso9eYFI2JQB3ZGGhHGB2_WOEh1zUmPwVbNiG0_tlzQHm-Gv7NHFNOHWNsbDGhx5fMeZUaa4EGfGL8UcjBFGdm2qs-CUlM5fSoA6kD9GE8axnn4ZQ1xeXQ0YTeUnIr3baOEPs56n9ry-YocMRcc8BMHWn-oLEoIEwZYABaVvqAbm_Lj9h_fY2c9cBqOGTZMoFtmyULvTD5_SaU6ZjJG-YYIbN_zAjK2W5ViyXfLWdjcIxhdCuT5y9oc5JiOcWWxaj2gAJuj1_VIpc8XtVCmDMsAdWq5qL-6vPYS1dJMuUZpZksyd8ZrYPW0REqXtcXFAtflbss1_Uhd-mB7Y1lEIb9WcNq-lvmzJKMWOHGKMblUVkXqhjImmRFHxCtuIkuEk=w958-h728-no' alt='Add Activities' />
+                  <img className='screenshot-img' src={AddBtn} alt='Add Activities' />
                   <p className='img-label'>Add Activity Button</p>
+               </div>
+               <div className='screenshots'>
+                  <img className='screenshot-img' src={AddForm} alt='Add Activities Form' />
+                  <p className='img-label'>Add Activities Form</p>
                </div>
             </section>
             <hr />
