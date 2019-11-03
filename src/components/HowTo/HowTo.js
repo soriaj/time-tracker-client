@@ -38,6 +38,19 @@ class HowTo extends Component {
             </section>
             <hr />
             <section>
+               <h2>Search For An Activity</h2>
+               <p>Once you've created an account, login to your account. From the activities list, select the <b>Search</b> bar and begin typing a company name. The list will auto filter as you type.</p>
+               <div className='screenshots'>
+                  <img className="screenshot-img" src='https://lh3.googleusercontent.com/soV9SrwR4G3TVVwaBcR5pvHIaiDqrHalFVG1voay2p50gkYHQ9Bgri2sQUsgXYFR7tDLlY3I-yFrr2nekg3RyTtQJZBCHg8zU-I8nCozJ1zXf6SFcdL8yjH--JCHS_gW5y-PKy4Rv9EYr_b0Fg9Zyuryyg3-wqgICe1_vUmY9t8QBI2Au6j-akRTs4pxKGUdO9WEaeVwU6ttmReo84W9OIHVxJy2_rIypfRmkNIJwX-sYweAeELFaL4ifFVv00oyJzJEWWsY0dCG6RWajI0RMURewKNnczZ1118ionbzU_Vy4qQeRXHjRm9qxsqF1oRvmXwBNhP9q9XNchdjFHBvcLBK2c2Xw-xXc45B2CHYB9TxqSHR0Kl7uq5ibW7KKhqgR645LltQSUqPAP08jXJIg1M7zb28e5vDUMrCuvK-yUb21xPlRBL1_HfeT3tC2XuyZRwIgOL9h1WhXaD6Z-bb8rWWpE4xoJCu64tobMdIofmONG4ADk2A9Co9rNvlGuuKYQWlft_gQLnnkQrsATW4LFwZG3fffypnGNoS88dRK2VnrNIMA3ClKnMrdWHarJ4LwjkMrrIfkAwAzx9kXJC2ISZhazd6J6YAUWIIfOUMuwObk_DpRZQCi7Wfx81q1NgZBWkzeTuNCrNMp2ML9d7ej_a33bD4mLC9P5wlxuqqlqTOyLxVaePo=w950-h1261-no' alt='Search Activity List' />
+                  <p className='img-label'>Search Activity List</p>
+               </div>
+               <div className='screenshots'>
+                  <img className="screenshot-img" src='https://lh3.googleusercontent.com/Js78F9h0YVBOZbxh58nanQboFbWYR6HFBDulW0CmPdgfSy6lPUdSteW-O3XC7Ut5TY5QCbWMCUnNDCypPoM1ay1KkJM5S9f5ezaGzeZpgBSYg_0T5FFsaJByu9s2az3C_Q-VkWo4xLB34aqDye0gw8lhD2CBrR5cROf9Ov7VfsuMNSU_HvmAJEUgQg9g09fytUD1KuVEqFEvjuZY6t2G3p5_HjnCxWxOcXrRbY01RladWNv1POefEKqo3JVKV8G-triU7NM4nLuBUuqilsFBsjCGBqU-YDkRWtVJ1yFDwkaHQ_lRd70cxDbLwmlzDOuZ-ySTv-2f3uU25sMEeGtFdfVZEcBkUqxi0G6sJF2rmxgXhX5SP9_d9cu5w0iJwNp3QF8KxtbFNuGBFSvpF4zvzKoozfdk5YlMXiKGZhEKY7BqscXhF0JwXSkkXnR5cS5sld9f13eAkDaJPKCRce0bPVWRE4lqii60P0a9nHRJ_aP0JHoeGc-yaksW4EEmhHvMi3Ymi1X2GHBnRLfu9zf0JppowK9VYIQbterx4fMr094WO7MaRNxLwWFiI_Cdw0Vo2jKKhTsr7tpJLciZUCDbbQ2yr-NYESeueGlKygOK6By-vI8qHpSjvlhIfWlE_wgXFCySYY0kqV4ieHaBoCS7OGbIisvf0RWms6tJLX2c_d49hSz08843=w961-h757-no' alt='Filter Activity List' />
+                  <p className='img-label'>Filter Activity List</p>
+               </div>
+            </section>
+            <hr />
+            <section>
                <h2>Read Activity Details</h2>
                <p>Once you've created an account, login to your account. From the activities list click on the activity card to view activity details. To go back to the activities page click on <b>Back.</b></p>
                <div className='screenshots'>
@@ -51,7 +64,7 @@ class HowTo extends Component {
             </section>
             <hr />
             <section>
-               <h2>Edit/Update an Activity</h2>
+               <h2>Edit/Update An Activity</h2>
                <p>Once you've created an account, login to your account. From the activities page you have two ways of editing/updating an activity. <b>Option 1</b> - click on the <b>pencil/edit icon</b> as shown below. Edit/Update your activity then click <b>Save.</b></p>
                <div className='screenshots'>
                   <img className='screenshot-img' src='https://lh3.googleusercontent.com/-QGKrIn3QqfkEwGjwbkNUJz1Ub5-q1WHFzBvgxeF5LSz_bfJXOcISzpmLAvobzFPQy-TVOF-G4pwyEAeKBNCX3DNXFUEs8hGu0z5iD43joc94TlVLgIVYwrRli8B1_45iAe7s79EhbC7Dr_jyMs6iHNDRncTaez3vWWsj6gP6b4YWRuI8s55dRbKSAq-N4obSYB7ZotKq5Zo3eKk9ByQYbCCmLZsHeUuqQ8-B-cQaNYi2B7YtozSwcsgSJ01HYOSQ2dMp7e9zRTAAE7fHo6diG1pM9V-QepxP_WBf41vpzd9ylsljDZqHzDbIiiIWygOtOyjMGUVP2cyWOdmOLG_3C1gPB_RqXYR7IlfbhTESo7hZgShPzciQQCZFGrQKEsdZSHJR2BmLVsQXGXo1QhHiY-E4PGLva1mFmjowZUkxx3R5NWXWRtvSyc-oWpZpFWtTice4weBu4-vaN0-AqGY8WBspsxIppYFt6vHMxsFNfP0XU5IvMrQqNqIOpvRgeOsx38HUch7P1mFAc1EucE28SlGgwzqZAnVuXNhXxYHt7nxk46Gr1tRtHXZWBfL2sA8faS7Dx5Jdq3AySnzqfH5bbl42rDrIt2nT4ohlUA-YLxwPHYxUUkfHThSLhpmJC6Kh5Q0ecN5L0bGi-p_GB9c1f-Mr647-KdX-wR2HZO0zbRZ-2j0ONY8=w958-h728-no' alt='Edit/Update Activity Option 1' />
@@ -77,7 +90,7 @@ class HowTo extends Component {
             </section>
             <hr />
             <section>
-               <h2>Delete an Activity</h2>
+               <h2>Delete An Activity</h2>
                <p>Once you've created an account, login to your account. From the activities list click on the <b>trash</b> icon to delete the activity. The activity will be remove from the list.</p>
                <div className='screenshots'>
                   <img className='screenshot-img' src='https://lh3.googleusercontent.com/tKDZSlgnQi5bDjggTO19tBqNJrHNmy4CLVEZ2qXf09A_67BLB4jJJRHGCXLYc_otiL3ZnggaK6w3Z1uwX2z7tRUEnPjLyhdk3Zi-7QdMZoLaZcbY9s80Yjd6Pmc_ArFed8Zyh3-T-za6uv2svG-4mjTLnNZGC2UMVl2gDQYITIiC4FBSfiTeeyLWMgb_0L7CdQPjqEBW5Tn2pnoSFyGU1bivhZXk8W012E_1XDTz-4fmM2xEiWsQOP7WORJQ12avhYOkxsb59VER7dDncoXzbW3zErkU6IocsuLLr1oHmReSdd8QpHwJsBNWXwWvv0v2lIF713U6-se7V6WP7zOSqLuoQRK-Hi-BPvjPb4Tg7fnRcMi1usYpw4JwyRcE_SRqI9rJovOjRJANLojiV8Rq9QuYgP6J7AWwJLhr4GCUDqT8GQpLjrEfG_jgVhU0Ct3XS_m8HEMQc8KPiEeExUI_4EErSxOdHwJjuP7OfZlHzrL3QYZ8ogxCpYfhrixgeXYt00tvyHw7ToIiuM-_lktndT2y5WJLzbHo_EuP_yfu3EPb2KW94MpohO3wec0kYum3sigSDQymPUmFw-LJ0WaVOzPfT9-8hLCOtILQZfKaVKxzH-A6L5RlnHxujZMs6LOV6rupxprB1jSTtalJkeW_CahXNqqgCsW-1Dw8uvEZrFktPwKaarTQ=w947-h752-no' alt='Delete Activity' />
