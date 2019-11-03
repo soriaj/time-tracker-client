@@ -9,6 +9,12 @@
    padding: 15px;
 }
 
+.btn-box {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
 .welcome-btn {
    background-color: #4CAF50;
    color: white;
@@ -18,11 +24,28 @@
    cursor: pointer;
    width: 150px;
    opacity: 0.9;
-   text-transform: uppercase;
+   text-transform: uppercase;  
+}
+
+.welcome-demo {
+   background-color: rgb(76, 152, 175);
+   color: white;
+   padding: 16px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 150px;
+   opacity: 0.9;
+   text-transform: uppercase;  
 }
 
 .welcome-btn:hover {
    background-color: rgb(38, 172, 43);
+   box-shadow: 1 1 rgb(44, 44, 44);
+}
+
+.welcome-demo:hover {
+   background-color: rgb(56, 133, 156);
    box-shadow: 1 1 rgb(44, 44, 44);
 }
 
@@ -35,5 +58,9 @@
    .welcome {
       padding-left: 45px;
       padding-right: 45px;
+   }
+   .btn-box {
+      justify-content: space-evenly;
+      flex-direction: row;
    }
 }
