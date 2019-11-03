@@ -12,8 +12,9 @@ import ActivityContext from '../../ActivityContext'
 import LoginPage from '../../routes/LoginPage';
 import PublicOnlyRoute from '../../Utils/PublicOnlyRoute'
 import PrivateRoute from '../../Utils/PrivateRoute'
+import HowTo from '../HowTo/HowTo';
 import './App.css'
-import HowTo from '../../HowTo/HowTo';
+
 
 class App extends Component {
   state = {
