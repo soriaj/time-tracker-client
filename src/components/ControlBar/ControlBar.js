@@ -6,6 +6,7 @@ import ActivityApiService from '../../services/activity-api-service'
 import './ControlBar.css'
 
 class ControlBar extends Component {
+   state = { error: null }
    static contextType = ActivityContext
 
    handleDeleteActivity = e => {
@@ -16,7 +17,7 @@ class ControlBar extends Component {
             this.context.deleteActivity(activityId)
             this.props.history.push('/activity')
          })
-         .catch(error => console.log(error))
+         .catch(error => this.setState({ error }))
    }
 
    handleEditActivity = e => {
