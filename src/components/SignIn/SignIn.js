@@ -6,7 +6,7 @@ class SignIn extends Component {
    render() {
       return (
          <div className="sign-in">
-            <p>Already have an account? <Link to='login'>Sign in</Link>.</p>
+            <p>Already have an account? <Link to='login'>Login</Link>.</p>
          </div>
       );
    }

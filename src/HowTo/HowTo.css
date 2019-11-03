@@ -1,0 +1,18 @@
+ul {
+  list-style: none; 
+}
+.screenshots {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+.screenshot-img {
+   margin-top: 10px;
+   width: 100%;
+   border: 3px solid white;
+   box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+}
+.img-label {
+   font-weight: 700;
+   text-align: center;
+}

@@ -13,6 +13,7 @@ import LoginPage from '../../routes/LoginPage';
 import PublicOnlyRoute from '../../Utils/PublicOnlyRoute'
 import PrivateRoute from '../../Utils/PrivateRoute'
 import './App.css'
+import HowTo from '../../HowTo/HowTo';
 
 class App extends Component {
   state = {
@@ -72,6 +73,7 @@ class App extends Component {
           
           <Switch>
             <Route exact path='/' component={LandingPage} />
+            <Route path='/how-to' component={HowTo} />
             
             {/* PUBLIC ROUTES */}
             <PublicOnlyRoute path='/register' component={RegisterPage} />

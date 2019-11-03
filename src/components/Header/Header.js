@@ -29,6 +29,12 @@ class Header extends Component {
       return (
          <ul className="main-nav" id="js-menu">
             <li>
+               <Link to='/' onClick={this.navBarToggle} className="nav-links">Home</Link>
+            </li>
+            <li>
+               <Link to='/how-to' onClick={this.navBarToggle} className="nav-links">How To</Link>
+            </li>
+            <li>
                <Link 
                   to='/login' 
                   onClick={this.handleLogoutClick}
@@ -43,6 +49,12 @@ class Header extends Component {
    renderLoginLink() {
       return (
          <ul className="main-nav" id="js-menu">
+            <li>
+               <Link to='/' onClick={this.navBarToggle} className="nav-links">Home</Link>
+            </li>
+            <li>
+               <Link to='/how-to' onClick={this.navBarToggle} className="nav-links">How To</Link>
+            </li>
             <li>
                <Link to='/register' onClick={this.navBarToggle} className="nav-links">Sign Up</Link>
             </li>
