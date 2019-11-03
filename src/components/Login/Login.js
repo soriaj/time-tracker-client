@@ -71,7 +71,7 @@ class Login extends Component {
 
                <hr />
             
-               <button type="submit" className="register-btn">Sign In</button>
+               <button type="submit" className="register-btn">Login</button>
             </div>
          </form>
       );
