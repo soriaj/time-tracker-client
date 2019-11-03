@@ -15,12 +15,12 @@ class HowTo extends Component {
             </ul>
             <hr />
             <section>
-               <h2>Sign up for account</h2>
+               <h2>Sign Up For An Account</h2>
                <p>Visit the sign up page, clicking <Link to='/register'>here</Link>, then fill in the form to create a free account.</p>
             </section>
             <hr />
             <section>
-               <h2>Login to your account</h2>
+               <h2>Login To Your Account</h2>
                <p>Visit the login page, clicking <Link to='/login'>here</Link>. Login with your user name and password.</p>
                <p><em>Don't feel like creating an account. Go ahead and test the application using the demo account. Details below:</em></p>
                <p><b>user name: </b>demo-user</p>
@@ -91,7 +91,7 @@ class HowTo extends Component {
             <hr />
             <section>
                <h2>Delete An Activity</h2>
-               <p>Once you've created an account, login to your account. From the activities list click on the <b>trash</b> icon to delete the activity. The activity will be remove from the list.</p>
+               <p>Once you've created an account, login to your account. From the activities list click on the <b>trash</b> icon to delete the activity. The activity will be removed from the list.</p>
                <div className='screenshots'>
                   <img className='screenshot-img' src='https://lh3.googleusercontent.com/tKDZSlgnQi5bDjggTO19tBqNJrHNmy4CLVEZ2qXf09A_67BLB4jJJRHGCXLYc_otiL3ZnggaK6w3Z1uwX2z7tRUEnPjLyhdk3Zi-7QdMZoLaZcbY9s80Yjd6Pmc_ArFed8Zyh3-T-za6uv2svG-4mjTLnNZGC2UMVl2gDQYITIiC4FBSfiTeeyLWMgb_0L7CdQPjqEBW5Tn2pnoSFyGU1bivhZXk8W012E_1XDTz-4fmM2xEiWsQOP7WORJQ12avhYOkxsb59VER7dDncoXzbW3zErkU6IocsuLLr1oHmReSdd8QpHwJsBNWXwWvv0v2lIF713U6-se7V6WP7zOSqLuoQRK-Hi-BPvjPb4Tg7fnRcMi1usYpw4JwyRcE_SRqI9rJovOjRJANLojiV8Rq9QuYgP6J7AWwJLhr4GCUDqT8GQpLjrEfG_jgVhU0Ct3XS_m8HEMQc8KPiEeExUI_4EErSxOdHwJjuP7OfZlHzrL3QYZ8ogxCpYfhrixgeXYt00tvyHw7ToIiuM-_lktndT2y5WJLzbHo_EuP_yfu3EPb2KW94MpohO3wec0kYum3sigSDQymPUmFw-LJ0WaVOzPfT9-8hLCOtILQZfKaVKxzH-A6L5RlnHxujZMs6LOV6rupxprB1jSTtalJkeW_CahXNqqgCsW-1Dw8uvEZrFktPwKaarTQ=w947-h752-no' alt='Delete Activity' />
                   <p className='img-label'>Delete Activity</p>
