@@ -35,10 +35,6 @@ class HowTo extends Component {
                   <img className='screenshot-img' src='https://lh3.googleusercontent.com/Cuhq6IfgtD_-xHP51gSvT464jo6j7l1tY0JGQE-Ak9Y7dxQJRtS7sBFzPQEZxRKeaiCku7G9781dEAk6tyhi6qqIpYusYslFKR5KMhQ7WPsWoDyxM1wN_xO6zDG3ZzJleyczWvQQC5fMU7LPwnAZWDTO-iCSeWX532QhyL558r5T6ZHiXfa_jHWaMTTT51L5MtvMzzMacwVaf-mcntGCbye_tkOja_vDeN7ZYUPU9oMgwUgH46gQiLxVTJqcT6wNiybuUq8VuRqWCJAsrTCOQNwW_Z7aWs7pZP1K7yhByjzVvrzzy8ugQso9eYFI2JQB3ZGGhHGB2_WOEh1zUmPwVbNiG0_tlzQHm-Gv7NHFNOHWNsbDGhx5fMeZUaa4EGfGL8UcjBFGdm2qs-CUlM5fSoA6kD9GE8axnn4ZQ1xeXQ0YTeUnIr3baOEPs56n9ry-YocMRcc8BMHWn-oLEoIEwZYABaVvqAbm_Lj9h_fY2c9cBqOGTZMoFtmyULvTD5_SaU6ZjJG-YYIbN_zAjK2W5ViyXfLWdjcIxhdCuT5y9oc5JiOcWWxaj2gAJuj1_VIpc8XtVCmDMsAdWq5qL-6vPYS1dJMuUZpZksyd8ZrYPW0REqXtcXFAtflbss1_Uhd-mB7Y1lEIb9WcNq-lvmzJKMWOHGKMblUVkXqhjImmRFHxCtuIkuEk=w958-h728-no' alt='Add Activities' />
                   <p className='img-label'>Add Activity Button</p>
                </div>
-               <div className='screenshots'>
-                  <img className="screenshot-img" src='https://lh3.googleusercontent.com/a_gMqPjeD-x2Sv2K0o4laz69Oo6ilgduXWKBKyg3hw-ydpaVjfc9G-LmrGWWtd9gZbDBao113PQjzW553x6Xv-nEMr-lncZSijKkRxZ-6yeHSErzmEblQ4gzILEcy2J7FaHUpLZZjdn3wc5eq7fDZqaqaJTy2nda0O-BAYNIOrgAdsuHjXAsVetBK3H_4Bi8zM_z3OWeM5NOhmTj1hCyrzV7lqszxYGxc2FY6fQGZ1nrGMJNhSESW1GSojSTsvxE27eTM2759LBqKAexO9movc9HvFp2WNF3y2XHn4SgNoEVWhYYWCsYjkHgoEqg7JqrJbT6zrsMXaqkZk5j4fn0eUtQxQg1DntB6s0ijiEquqjqGBy39EGnK-6Xn_K5Vfl_8o5TZ6e6BiWoNiAc9tTi_ACl92K_DWADW8XPmGI5CLSJtQmFmJjj5DqJnZzqmd7TK3wA-mM8Kab0UbFboWKYsL9A-5-2K-xD_ujRjsHrjxODh8Dlx1moprjtr8bOjl24couXSh-nPsUWbrIQV92uJHkqLNzCEDAvKM2xaQV_eprV5M_O5u4ytOqzh2_Jglcd0rhnjZbenQ5rsQHbb0DNULFXihQFH7oscmxkUuNqc7Gp9XbgfOzkPh_iKmTrQY-_8qsfx0qd5rorI3gRXa89D4J4QHbY1oGbB-2xzb0z_fLPxwE4JFDP=w876-h751-no' alt='Add Activity Form' />
-                  <p className='img-label'>Add Activity Form</p>
-               </div>
             </section>
             <hr />
             <section>
