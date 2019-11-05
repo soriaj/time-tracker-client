@@ -21,16 +21,22 @@ class Header extends Component {
    }
 
    navBarToggle = () => {
+      this.setState({ collasped: !this.state.collasped })
       let mainNav = document.getElementById('js-menu');
+      mainNav.classList.toggle('active');
+   }
+
+   navBarToggleOnLogo = () => {
+      let mainNav = document.getElementById('js-menu');
+      if(mainNav.classList === 'active'){
+         mainNav.classList.toggle('active');
+      }
       mainNav.classList.toggle('active');
    }
 
    renderLogoutLink() {
       return (
          <ul className="main-nav" id="js-menu">
-            <li>
-               <Link to='/' onClick={this.navBarToggle} className="nav-links">Home</Link>
-            </li>
             <li>
                <Link to='/how-to' onClick={this.navBarToggle} className="nav-links">How To</Link>
             </li>
@@ -49,9 +55,6 @@ class Header extends Component {
    renderLoginLink() {
       return (
          <ul className="main-nav" id="js-menu">
-            <li>
-               <Link to='/' onClick={this.navBarToggle} className="nav-links">Home</Link>
-            </li>
             <li>
                <Link to='/how-to' onClick={this.navBarToggle} className="nav-links">How To</Link>
             </li>
@@ -72,9 +75,9 @@ class Header extends Component {
          <nav role='navigation' className="navbar">
             <Hamburger navBarToggle={this.navBarToggle}/>
             <div className="logo">
-               <FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
-               </FontAwesomeIcon>
-               {' '}Time Tracker
+               <Link to='/' onClick={this.navBarToggleOnLogo} className='logo-btn'><FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
+               </FontAwesomeIcon></Link>
+               {' '}
             </div>
             {TokenService.hasAuthToken() 
                ? this.renderLogoutLink()

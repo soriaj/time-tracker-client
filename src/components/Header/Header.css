@@ -20,6 +20,10 @@
    color: rgba(255, 255, 255, 0.7);
 }
 
+.logo-btn {
+   color: white;
+}
+
 .main-nav li {
    text-align: center;
    margin: 15px auto;
