@@ -74,7 +74,7 @@ class Header extends Component {
             <div className="logo">
                <FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
                </FontAwesomeIcon>
-               {' '}Time Tracker
+               {' '}
             </div>
             {TokenService.hasAuthToken() 
                ? this.renderLogoutLink()
