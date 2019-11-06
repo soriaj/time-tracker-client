@@ -28,9 +28,9 @@ class Header extends Component {
    renderLogoutLink() {
       return (
          <>
-         <div className="logo">
-               <FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
-               </FontAwesomeIcon>
+          <div className="logo">
+               <Link to='/' className='logo-btn' ><FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
+               </FontAwesomeIcon></Link>
                {' '}
          </div>
          <ul className="main-nav" id="js-menu">
