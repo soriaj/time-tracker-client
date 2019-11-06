@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import './RegisterForm.css'
 import SignIn from '../SignIn/SignIn';
 import AuthApiService from '../../services/auth-api-service'
+import Loading from '../Loading/Loading'
 
 class RegisterForm extends Component {
-   state = { error: null }
+   state = { 
+      error: null,
+      loading: false
+   }
 
    static defaultProps = {
       onRegistrationSuccess: () => {}
@@ -38,7 +42,7 @@ class RegisterForm extends Component {
    handleSubmit = e => {
       e.preventDefault()
       const { full_name, user_name, password } = e.target
-      this.setState({ error: null })
+      this.setState({ error: null, loading: true })
       
       AuthApiService.postUser({
          full_name: full_name.value,
@@ -50,11 +54,12 @@ class RegisterForm extends Component {
             user_name.value = ''
             password.value = ''
             this.props.onRegistrationSuccess()
+            this.setState({ loading: false })
          })
-         .catch(res => this.setState({ error: res.error }))
+         .catch(res => this.setState({ error: res.error, loading: false }))
    }
    render() {
-      const { error } = this.state
+      const { error, loading } = this.state
       return (
          <div className="registration">
             <form 
@@ -92,8 +97,9 @@ class RegisterForm extends Component {
                      required 
                   />
                   <hr />
-               
-                  <button type="submit" className="register-btn">Submit</button>
+                  {loading && (<Loading />)}
+                  {!loading &&
+                  <button type="submit" className="register-btn">Submit</button>}
                </div>
 
                <SignIn />
