@@ -35,9 +35,6 @@ class Header extends Component {
          </div>
          <ul className="main-nav" id="js-menu">
             <li>
-               <Link to='/' onClick={this.navBarToggle} className="nav-links">Home</Link>
-            </li>
-            <li>
                <Link to='/how-to' onClick={this.navBarToggle} className="nav-links">How To</Link>
             </li>
             <li>
@@ -63,9 +60,6 @@ class Header extends Component {
          </div>
          <ul className="main-nav" id="js-menu">
             <li>
-               <Link to='/' onClick={this.navBarToggle} className="nav-links">Home</Link>
-            </li>
-            <li>
                <Link to='/how-to' onClick={this.navBarToggle} className="nav-links">How To</Link>
             </li>
             <li>
@@ -85,11 +79,6 @@ class Header extends Component {
          <>
          <nav role='navigation' className="navbar">
             <Hamburger navBarToggle={this.navBarToggle}/>
-            {/* <div className="logo">
-               <FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
-               </FontAwesomeIcon>
-               {' '}
-            </div> */}
             {TokenService.hasAuthToken() 
                ? this.renderLogoutLink()
                : this.renderLoginLink()
