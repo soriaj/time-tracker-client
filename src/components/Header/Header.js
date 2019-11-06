@@ -27,6 +27,12 @@ class Header extends Component {
 
    renderLogoutLink() {
       return (
+         <>
+         <div className="logo">
+               <FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
+               </FontAwesomeIcon>
+               {' '}
+         </div>
          <ul className="main-nav" id="js-menu">
             <li>
                <Link to='/' onClick={this.navBarToggle} className="nav-links">Home</Link>
@@ -43,11 +49,18 @@ class Header extends Component {
                </Link>
             </li>
          </ul>
+         </>
       )
    }
 
    renderLoginLink() {
       return (
+         <>
+         <div className="logo">
+               <Link to='/' className='logo-btn' ><FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
+               </FontAwesomeIcon></Link>
+               {' '}
+         </div>
          <ul className="main-nav" id="js-menu">
             <li>
                <Link to='/' onClick={this.navBarToggle} className="nav-links">Home</Link>
@@ -62,6 +75,7 @@ class Header extends Component {
                <Link to='/login' onClick={this.navBarToggle} className="nav-links">Login</Link>
             </li>
          </ul>
+         </>
 
       )
    }
@@ -71,11 +85,11 @@ class Header extends Component {
          <>
          <nav role='navigation' className="navbar">
             <Hamburger navBarToggle={this.navBarToggle}/>
-            <div className="logo">
+            {/* <div className="logo">
                <FontAwesomeIcon icon={faUserClock} className="fas fa-user-clock">
                </FontAwesomeIcon>
-               {' '}Time Tracker
-            </div>
+               {' '}
+            </div> */}
             {TokenService.hasAuthToken() 
                ? this.renderLogoutLink()
                : this.renderLoginLink()
